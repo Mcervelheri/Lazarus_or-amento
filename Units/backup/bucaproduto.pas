@@ -36,6 +36,8 @@ type
     procedure btnLimparDataClick(Sender: TObject);
     procedure btnPesqDataClick(Sender: TObject);
     procedure btnPesquisaClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
   public
@@ -57,7 +59,7 @@ var
 begin
   DMF.qryProduto.Close;
   select := 'select ' + 'produtoid as id, ' + 'categoriaprodutoid as categoria, ' +
-    'ds_produto as descrição, ' + 'obs_produto as obeservação, ' +
+    'ds_produto as descrição, ' + 'obs_produto as observação, ' +
     'vl_venda_produto as valor_venda, ' + 'dt_cadastro_produto as data_cadastro, ' +
     'status_produto as status ' + 'from produto';
   if edtPesquisarID.Text <> '' then
@@ -284,6 +286,17 @@ begin
   DMF.qryProduto.Open;
   sbLimparTudo.click;
   ShowMessage(DMF.qryProduto.SQL.Text);
+end;
+
+procedure TBucaProdutoF.DBGrid1DblClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TBucaProdutoF.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+  CloseAction:=caFree;
 end;
 
 procedure TBucaProdutoF.btnLimparDataClick(Sender: TObject);

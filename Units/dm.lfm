@@ -70,7 +70,7 @@ object DMF: TDMF
       'select produtoid as id, '
       'categoriaprodutoid as categoria,'
       'ds_produto as descrição,'
-      'obs_produto as obeservação,'
+      'obs_produto as observação,'
       'vl_venda_produto as valor_venda,'
       'dt_cadastro_produto as data_cadastro,'
       'status_produto as status '
@@ -108,9 +108,9 @@ object DMF: TDMF
       Required = True
       Size = 50
     end
-    object qryProdutoobeservao: TStringField
+    object qryProdutoobservao: TStringField
       FieldKind = fkData
-      FieldName = 'obeservação'
+      FieldName = 'observação'
       Index = 3
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]

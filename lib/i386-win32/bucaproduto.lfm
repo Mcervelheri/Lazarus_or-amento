@@ -1061,8 +1061,8 @@ object BucaProdutoF: TBucaProdutoF
         FieldName = 'descrição'
       end    
       item
-        Title.Caption = 'obeservação'
-        FieldName = 'obeservação'
+        Title.Caption = 'observação'
+        FieldName = 'observação'
       end    
       item
         Title.Caption = 'valor_venda'

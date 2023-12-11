@@ -21,6 +21,8 @@ type
     Label1: TLabel;
     Label5: TLabel;
     Panel1: TPanel;
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
   public
@@ -36,6 +38,12 @@ implementation
 
 { TBuscaClienteF }
 
+
+
+procedure TBuscaClienteF.DBGrid1DblClick(Sender: TObject);
+begin
+  close;
+end;
 
 
 end.

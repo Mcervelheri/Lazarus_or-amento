@@ -35,7 +35,7 @@ type
     qryProdutodata_cadastro: TDateTimeField;
     qryProdutodescrio: TStringField;
     qryProdutoid: TLongintField;
-    qryProdutoobeservao: TStringField;
+    qryProdutoobservao: TStringField;
     qryProdutostatus: TStringField;
     qryProdutovalor_venda: TFloatField;
     qryUsuarioid: TLongintField;

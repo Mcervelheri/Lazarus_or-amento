@@ -20,7 +20,6 @@ type
     btnExcluir1: TSpeedButton;
     btnRemoverItem: TButton;
     btnSalvar1: TSpeedButton;
-    edtIdCliente: TDBEdit;
     edtDataOrc: TDBDateEdit;
     edtDataVal: TDBDateEdit;
     edtOrcItemId: TDBEdit;
@@ -194,7 +193,7 @@ begin
     DMF.qryOrcamentovl_total_orcamento.AsString := calcValorOrc();
     DMF.qryOrcamento.Post;
   end;
-
+  btnRemoverItem.Enabled:=True;
 end;
 
 procedure TOrcamentoF.btnCancelarClick(Sender: TObject);
@@ -225,6 +224,7 @@ end;
 procedure TOrcamentoF.btnRemoverItemClick(Sender: TObject);
 begin
   DMF.qryOrcamentoItem.Delete;
+  DMF.qryOrcamentovl_total_orcamento.AsString := calcValorOrc();
 end;
 
 procedure TOrcamentoF.btnSalvarClick(Sender: TObject);
@@ -239,16 +239,31 @@ end;
 procedure TOrcamentoF.DBGrid1DblClick(Sender: TObject);
 begin
   AbreOrcItens(DMF.qryOrcamentoorcamentoid.AsInteger);
-  //DBEdit3.Text:=FloatToStr(calcOrc());
+  DMF.qryOrcamento.Edit;
+  DMF.qryOrcamentoItem.Edit;
+  btnAdicionarItem.Enabled:=True;
+  btnRemoverItem.Enabled:=True;
   PageControl1.ActivePage := tsCadastrar;
 end;
 
 procedure TOrcamentoF.edtValorUnChange(Sender: TObject);
 begin
-  if (edtQtdProd.Text <> '') and (edtValorUn.Text <> '') then
+  if DMF.qryOrcamentoItem.State in [dsInsert, dsEdit] then
+  begin
+    if (edtQtdProd.Text <> '') and (edtValorUn.Text <> '') then
   begin
     edtValorTot.Field.AsString :=
       FloatToStr(StrToFloat(edtQtdProd.Text) * StrToFloat(edtValorUn.Text));
+  end
+    else
+    begin
+      DMF.qryOrcamentoItem.Edit;
+      if (edtQtdProd.Text <> '') and (edtValorUn.Text <> '') then
+  begin
+    edtValorTot.Field.AsString :=
+      FloatToStr(StrToFloat(edtQtdProd.Text) * StrToFloat(edtValorUn.Text));
+  end;
+    end;
   end;
 end;
 
@@ -269,9 +284,10 @@ procedure TOrcamentoF.SpeedButton1Click(Sender: TObject);
 begin
   BuscaClienteF := TBuscaClienteF.Create(self);
   BuscaClienteF.ShowModal;
-  edtIdCliente.Field.AsString := edtCliente.Field.AsString;
   DMF.qryOrcamentodt_orcamento.AsString := edtDataOrc.Field.AsString;
+  DMF.qryOrcamentoclienteid.AsString:=edtCliente.Field.AsString;
 
+  btnAdicionarItem.Enabled:=True;
 end;
 
 

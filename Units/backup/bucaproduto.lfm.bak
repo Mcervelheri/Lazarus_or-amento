@@ -6,6 +6,7 @@ object BucaProdutoF: TBucaProdutoF
   Caption = 'Busca Produto'
   ClientHeight = 441
   ClientWidth = 824
+  OnClose = FormClose
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
@@ -1060,8 +1061,8 @@ object BucaProdutoF: TBucaProdutoF
         FieldName = 'descrição'
       end    
       item
-        Title.Caption = 'obeservação'
-        FieldName = 'obeservação'
+        Title.Caption = 'observação'
+        FieldName = 'observação'
       end    
       item
         Title.Caption = 'valor_venda'
@@ -1081,6 +1082,7 @@ object BucaProdutoF: TBucaProdutoF
     Flat = True
     Scrollbars = ssAutoBoth
     TabOrder = 1
+    OnDblClick = DBGrid1DblClick
   end
   object dsBuscaProduto: TDataSource
     DataSet = DMF.qryProduto

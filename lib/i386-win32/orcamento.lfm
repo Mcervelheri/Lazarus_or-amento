@@ -1,24 +1,24 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 210
+  Left = 421
   Height = 507
-  Top = 122
-  Width = 730
+  Top = 134
+  Width = 1111
   Caption = 'Orcamento'
   ClientHeight = 507
-  ClientWidth = 730
+  ClientWidth = 1111
   Color = 14211288
   OnClose = FormClose
   OnShow = FormShow
   inherited PageControl1: TPageControl
     Height = 507
-    Width = 730
+    Width = 1111
     ShowTabs = True
     inherited tsConsulta: TTabSheet
       ClientHeight = 479
-      ClientWidth = 722
+      ClientWidth = 1103
       inherited Panel1: TPanel
-        Width = 722
-        ClientWidth = 722
+        Width = 1103
+        ClientWidth = 1103
         inherited edtPesquisarID: TEdit
           Left = 112
         end
@@ -39,43 +39,49 @@ inherited OrcamentoF: TOrcamentoF
       end
       inherited DBGrid1: TDBGrid
         Height = 399
-        Width = 658
+        Width = 1039
         AlternateColor = clSilver
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'orcamentoid'
+            Title.Caption = 'ID'
+            Width = 40
             FieldName = 'orcamentoid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'clienteid'
+            Title.Caption = 'Cliente'
+            Width = 50
             FieldName = 'clienteid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'dt_orcamento'
-            Width = 50
+            Title.Caption = 'Data Orçamento'
+            Width = 100
             FieldName = 'dt_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'dt_validade_orcamento'
+            Title.Caption = 'Val Orçamento'
+            Width = 100
             FieldName = 'dt_validade_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'vl_total_orcamento'
+            Title.Caption = 'Valor Total'
+            Width = 80
             FieldName = 'vl_total_orcamento'
             DisplayFormat = '###,##0.00'
           end>
         Flat = True
+        Font.Style = [fsBold, fsItalic]
+        ParentFont = False
         OnDblClick = DBGrid1DblClick
       end
     end
     inherited tsCadastrar: TTabSheet
       ClientHeight = 479
-      ClientWidth = 722
+      ClientWidth = 1103
       inherited Panel3: TPanel
         Height = 399
         ClientHeight = 399
@@ -95,12 +101,12 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel4: TPanel
-        Width = 722
-        ClientWidth = 722
+        Width = 1103
+        ClientWidth = 1103
         inherited Label2: TLabel
-          Left = 664
+          Left = 1368
           Top = 0
-          Width = 46
+          Width = 0
           Caption = 'Orçamento'
         end
         object Label5: TLabel[1]
@@ -137,7 +143,7 @@ inherited OrcamentoF: TOrcamentoF
           Left = 120
           Height = 21
           Top = 38
-          Width = 24
+          Width = 56
           DataField = 'id'
           DataSource = BuscaClienteF.dsBuscaCliente
           ReadOnly = True
@@ -151,9 +157,9 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 0
         end
         object SpeedButton1: TSpeedButton[4]
-          Left = 144
+          Left = 176
           Height = 22
-          Top = 38
+          Top = 37
           Width = 23
           Caption = '...'
           OnClick = SpeedButton1Click
@@ -162,7 +168,7 @@ inherited OrcamentoF: TOrcamentoF
           Left = 120
           Height = 21
           Top = 8
-          Width = 24
+          Width = 56
           DataField = 'orcamentoid'
           DataSource = dsModelo
           ReadOnly = True
@@ -176,7 +182,7 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 1
         end
         object Label4: TLabel[6]
-          Left = 465
+          Left = 721
           Height = 21
           Top = 8
           Width = 87
@@ -191,7 +197,7 @@ inherited OrcamentoF: TOrcamentoF
           ParentFont = False
         end
         object btnAdicionarItem: TButton[7]
-          Left = 448
+          Left = 704
           Height = 25
           Top = 48
           Width = 104
@@ -201,7 +207,7 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 2
         end
         object btnRemoverItem: TButton[8]
-          Left = 561
+          Left = 817
           Height = 25
           Top = 48
           Width = 104
@@ -211,16 +217,16 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 3
         end
         object lblDescrCli: TDBText[9]
-          Left = 184
+          Left = 208
           Height = 15
-          Top = 46
-          Width = 69
+          Top = 40
+          Width = 81
           DataField = 'nome'
           DataSource = BuscaClienteF.dsBuscaCliente
           ParentColor = False
         end
         object edtDataOrc: TDBDateEdit[10]
-          Left = 336
+          Left = 592
           Height = 23
           Top = 5
           Width = 103
@@ -235,7 +241,7 @@ inherited OrcamentoF: TOrcamentoF
           DataSource = dsModelo
         end
         object edtDataVal: TDBDateEdit[11]
-          Left = 336
+          Left = 592
           Height = 23
           Top = 37
           Width = 103
@@ -249,20 +255,8 @@ inherited OrcamentoF: TOrcamentoF
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
-        object edtIdCliente: TDBEdit[12]
-          Left = 165
-          Height = 23
-          Top = 17
-          Width = 35
-          DataField = 'clienteid'
-          DataSource = dsModelo
-          Alignment = taRightJustify
-          MaxLength = 0
-          TabOrder = 6
-          Visible = False
-        end
-        object edtValorTotalOrc: TDBEdit[13]
-          Left = 568
+        object edtValorTotalOrc: TDBEdit[12]
+          Left = 824
           Height = 23
           Top = 8
           Width = 80
@@ -271,19 +265,19 @@ inherited OrcamentoF: TOrcamentoF
           ReadOnly = True
           Alignment = taRightJustify
           MaxLength = 0
-          TabOrder = 7
+          TabOrder = 6
         end
       end
       inherited Panel5: TPanel
         Height = 399
-        Width = 658
+        Width = 1039
         ClientHeight = 399
-        ClientWidth = 658
+        ClientWidth = 1039
         object DBGrid2: TDBGrid[0]
           Left = 1
           Height = 397
           Top = 1
-          Width = 656
+          Width = 1037
           Align = alClient
           AlternateColor = clSilver
           AutoEdit = False
@@ -326,16 +320,16 @@ inherited OrcamentoF: TOrcamentoF
     object tsItem: TTabSheet[2]
       Caption = 'tsItem'
       ClientHeight = 479
-      ClientWidth = 722
+      ClientWidth = 1103
       object Panel6: TPanel
         Left = 0
         Height = 80
         Top = 0
-        Width = 722
+        Width = 1103
         Align = alTop
         BevelColor = clSilver
         ClientHeight = 80
-        ClientWidth = 722
+        ClientWidth = 1103
         Color = clSilver
         Font.Style = [fsBold]
         ParentColor = False
@@ -345,7 +339,7 @@ inherited OrcamentoF: TOrcamentoF
           Left = 664
           Height = 65
           Top = 0
-          Width = 46
+          Width = 427
           Align = alCustom
           Alignment = taCenter
           Anchors = [akTop, akLeft, akRight]

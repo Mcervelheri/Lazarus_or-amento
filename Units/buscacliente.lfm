@@ -6,7 +6,6 @@ object BuscaClienteF: TBuscaClienteF
   Caption = 'Buscar cliente'
   ClientHeight = 325
   ClientWidth = 570
-  OnClose = FormClose
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel

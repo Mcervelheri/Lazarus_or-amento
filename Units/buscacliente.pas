@@ -22,7 +22,6 @@ type
     Label5: TLabel;
     Panel1: TPanel;
     procedure DBGrid1DblClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
   public
@@ -45,11 +44,6 @@ begin
   close;
 end;
 
-procedure TBuscaClienteF.FormClose(Sender: TObject;
-  var CloseAction: TCloseAction);
-begin
-  CloseAction:=caFree;
-end;
 
 end.
 
