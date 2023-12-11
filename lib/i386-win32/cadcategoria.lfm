@@ -1,0 +1,199 @@
+inherited CadCategoriaF: TCadCategoriaF
+  Left = 1043
+  Height = 500
+  Top = 311
+  Width = 639
+  Caption = 'Cadastro de Categoria'
+  ClientHeight = 500
+  ClientWidth = 639
+  Menu = nil
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  inherited PageControl1: TPageControl
+    Height = 500
+    Width = 639
+    ActivePage = tsConsulta
+    TabIndex = 0
+    inherited tsConsulta: TTabSheet
+      ClientHeight = 492
+      ClientWidth = 631
+      inherited Panel1: TPanel
+        Width = 631
+        ClientWidth = 631
+        inherited edtPesquisarID: TEdit
+          NumbersOnly = True
+        end
+        inherited btnPesquisa: TSpeedButton
+          OnClick = SpeedButton1Click
+        end
+        object edtPesquisarDesc: TEdit[3]
+          Left = 264
+          Height = 21
+          Top = 24
+          Width = 264
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentBidiMode = False
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label5: TLabel[4]
+          Left = 184
+          Height = 21
+          Top = 24
+          Width = 75
+          Caption = 'Descrição:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = 14120960
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      inherited Panel2: TPanel
+        Height = 412
+        ClientHeight = 412
+        inherited btnAdicionar: TSpeedButton
+          OnClick = SpeedButton2Click
+        end
+        inherited btnFechar: TSpeedButton
+          Top = 343
+          OnClick = btnFecharClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        Height = 412
+        Width = 567
+        AlternateColor = clSilver
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'id'
+            Width = 40
+            FieldName = 'id'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'descrição'
+            FieldName = 'descrição'
+          end>
+        Flat = True
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = 14120960
+        Font.Height = -16
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tsCadastrar: TTabSheet
+      ClientHeight = 492
+      ClientWidth = 631
+      inherited Panel3: TPanel
+        Height = 412
+        ClientHeight = 412
+        inherited btnSalvar: TSpeedButton
+          OnClick = btnSalvarClick
+        end
+        inherited btnCancelar: TSpeedButton
+          Anchors = [akLeft, akBottom]
+          OnClick = btnCancelarClick
+        end
+        inherited btnExcluir: TSpeedButton
+          OnClick = btnExcluirClick
+        end
+        inherited btnEditar: TSpeedButton
+          OnClick = btnEditarClick
+        end
+      end
+      inherited Panel4: TPanel
+        Width = 631
+        ClientWidth = 631
+        inherited Label2: TLabel
+          Width = 475
+          Caption = 'Cadastrar: Categoria'
+          Font.Height = 59
+        end
+      end
+      inherited Panel5: TPanel
+        Height = 412
+        Width = 567
+        ClientHeight = 412
+        ClientWidth = 567
+        Font.Height = -20
+        ParentFont = False
+        object Label3: TLabel[0]
+          Left = 129
+          Height = 28
+          Top = 40
+          Width = 27
+          Caption = 'ID:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label4: TLabel[1]
+          Left = 60
+          Height = 28
+          Top = 88
+          Width = 96
+          Caption = 'Descrição:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtDesc: TDBEdit[2]
+          Left = 160
+          Height = 28
+          Top = 88
+          Width = 364
+          DataField = 'descrição'
+          DataSource = dsModelo
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          MaxLength = 50
+          ParentFont = False
+          TabOrder = 0
+          OnKeyDown = edtDescKeyDown
+        end
+        object txtID: TDBText[3]
+          Left = 160
+          Height = 28
+          Top = 40
+          Width = 24
+          DataField = 'id'
+          DataSource = dsModelo
+          ParentColor = False
+        end
+      end
+    end
+  end
+  inherited dsModelo: TDataSource
+    DataSet = DMF.qryCategoria
+    Left = 432
+    Top = 32
+  end
+end

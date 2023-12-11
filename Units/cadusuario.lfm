@@ -1,0 +1,222 @@
+inherited CadUsuarioF: TCadUsuarioF
+  Left = 536
+  Top = 278
+  Caption = 'Cadastro Usuário'
+  ClientHeight = 496
+  inherited PageControl1: TPageControl
+    inherited tsConsulta: TTabSheet
+      inherited Panel1: TPanel
+        inherited btnPesquisa: TSpeedButton
+          OnClick = btnPesquisaClick
+        end
+        object Label3: TLabel[3]
+          Left = 176
+          Height = 21
+          Top = 24
+          Width = 63
+          Caption = 'Usuário:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = 14120960
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtPesquisarUser: TEdit[4]
+          Left = 240
+          Height = 21
+          Top = 24
+          Width = 224
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentBidiMode = False
+          ParentFont = False
+          TabOrder = 1
+        end
+      end
+      inherited Panel2: TPanel
+        inherited btnAdicionar: TSpeedButton
+          OnClick = btnAdicionarClick
+        end
+        inherited btnFechar: TSpeedButton
+          OnClick = btnFecharClick
+        end
+      end
+      inherited DBGrid1: TDBGrid
+        AlternateColor = clSilver
+        Columns = <        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'id'
+            Width = 30
+            FieldName = 'id'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'usuario'
+            FieldName = 'usuario'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'nome'
+            FieldName = 'nome'
+          end>
+        Flat = True
+        OnDblClick = DBGrid1DblClick
+      end
+    end
+    inherited tsCadastrar: TTabSheet
+      inherited Panel3: TPanel
+        inherited btnSalvar: TSpeedButton
+          OnClick = btnSalvarClick
+        end
+      end
+      inherited Panel4: TPanel
+        inherited Label2: TLabel
+          Caption = 'Cadastrar: Usuário'
+        end
+      end
+      inherited Panel5: TPanel
+        object Label4: TLabel[0]
+          Left = 129
+          Height = 28
+          Top = 40
+          Width = 27
+          Caption = 'ID:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label5: TLabel[1]
+          Left = 77
+          Height = 28
+          Top = 88
+          Width = 79
+          Caption = 'Usuário:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label6: TLabel[2]
+          Left = 94
+          Height = 28
+          Top = 136
+          Width = 62
+          Caption = 'Nome:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label7: TLabel[3]
+          Left = 93
+          Height = 28
+          Top = 184
+          Width = 63
+          Caption = 'Senha:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clMenuHighlight
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtUsuario: TDBEdit[4]
+          Left = 160
+          Height = 28
+          Top = 88
+          Width = 168
+          DataField = 'usuario'
+          DataSource = dsModelo
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          MaxLength = 30
+          ParentFont = False
+          TabOrder = 0
+        end
+        object DBText1: TDBText[5]
+          Left = 160
+          Height = 28
+          Top = 40
+          Width = 12
+          DataField = 'id'
+          DataSource = dsModelo
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edtNome: TDBEdit[6]
+          Left = 160
+          Height = 28
+          Top = 136
+          Width = 264
+          DataField = 'nome'
+          DataSource = dsModelo
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          MaxLength = 60
+          ParentFont = False
+          TabOrder = 1
+        end
+        object edtSenha: TDBEdit[7]
+          Left = 160
+          Height = 28
+          Top = 184
+          Width = 80
+          DataField = 'senha'
+          DataSource = dsModelo
+          BorderStyle = bsNone
+          Color = 15461355
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          MaxLength = 50
+          ParentFont = False
+          PasswordChar = '*'
+          TabOrder = 2
+        end
+        object cbMostrarSenha: TCheckBox[8]
+          Left = 248
+          Height = 32
+          Top = 180
+          Width = 157
+          Caption = 'Mostrar Senha'
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
+          OnClick = cbMostrarSenhaClick
+          ParentFont = False
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  inherited dsModelo: TDataSource
+    DataSet = DMF.qryUsuario
+  end
+end

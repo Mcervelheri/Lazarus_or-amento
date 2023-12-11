@@ -1,0 +1,33 @@
+object RelOrcamentoF: TRelOrcamentoF
+  Left = 743
+  Height = 148
+  Top = 279
+  Width = 194
+  Caption = 'Relatório de Orçamentos'
+  ClientHeight = 148
+  ClientWidth = 194
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object btnGerarRel: TBitBtn
+    Left = 32
+    Height = 30
+    Top = 8
+    Width = 136
+    Caption = 'Relatório orçamento'
+    TabOrder = 0
+  end
+  object frReport1: TfrReport
+    Dataset = frDBdsOrcamento
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 76
+    Top = 92
+  end
+  object frDBdsOrcamento: TfrDBDataSet
+    DataSet = DMF.qryOrcamento
+    Left = 156
+    Top = 92
+  end
+end

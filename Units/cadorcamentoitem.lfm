@@ -1,0 +1,151 @@
+object CadOrcamentoItemF: TCadOrcamentoItemF
+  Left = 490
+  Height = 417
+  Top = 135
+  Width = 515
+  Caption = 'Orçamento item'
+  ClientHeight = 417
+  ClientWidth = 515
+  LCLVersion = '2.2.6.0'
+  object edtProdId: TDBEdit
+    Left = 256
+    Height = 23
+    Top = 41
+    Width = 80
+    DataField = 'produtoid'
+    DataSource = dsOrcamentoItem
+    ReadOnly = True
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object Label11: TLabel
+    Left = 160
+    Height = 21
+    Top = 41
+    Width = 78
+    Caption = 'produto id'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 14120960
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 152
+    Height = 21
+    Top = 89
+    Width = 94
+    Caption = 'produto desc'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 14120960
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 208
+    Height = 21
+    Top = 139
+    Width = 26
+    Caption = 'qtd'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 14120960
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 176
+    Height = 21
+    Top = 185
+    Width = 63
+    Caption = 'valor un'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 14120960
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 161
+    Height = 21
+    Top = 235
+    Width = 78
+    Caption = 'valot total'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = 14120960
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SpeedButton3: TSpeedButton
+    Left = 344
+    Height = 22
+    Top = 40
+    Width = 23
+    OnClick = SpeedButton3Click
+  end
+  object btnGravarItemOrc: TButton
+    Left = 157
+    Height = 25
+    Top = 291
+    Width = 75
+    Caption = 'Gravar'
+    OnClick = btnGravarItemOrcClick
+    TabOrder = 1
+  end
+  object edtProdDesc: TEdit
+    Left = 256
+    Height = 23
+    Top = 89
+    Width = 80
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object edtQtdProd: TEdit
+    Left = 256
+    Height = 23
+    Top = 137
+    Width = 80
+    OnChange = edtQtdProdChange
+    TabOrder = 3
+  end
+  object edtValorUn: TEdit
+    Left = 256
+    Height = 23
+    Top = 185
+    Width = 80
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object edtValorTot: TEdit
+    Left = 256
+    Height = 23
+    Top = 233
+    Width = 80
+    ReadOnly = True
+    TabOrder = 5
+  end
+  object dsOrcamentoItem: TDataSource
+    AutoEdit = False
+    DataSet = DMF.qryOrcamentoItem
+    Left = 40
+    Top = 224
+  end
+end

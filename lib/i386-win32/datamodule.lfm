@@ -1,0 +1,15 @@
+object DataModuleF: TDataModuleF
+  Left = 621
+  Height = 240
+  Top = 171
+  Width = 320
+  Caption = 'Data Module'
+  LCLVersion = '2.2.6.0'
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Port = 0
+    Left = 40
+    Top = 24
+  end
+end

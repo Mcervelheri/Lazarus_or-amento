@@ -1,0 +1,33 @@
+object RelClientesF: TRelClientesF
+  Left = 800
+  Height = 148
+  Top = 266
+  Width = 194
+  Caption = 'Relatório de clientes'
+  ClientHeight = 148
+  ClientWidth = 194
+  LCLVersion = '2.2.6.0'
+  object btnGerarRel: TBitBtn
+    Left = 32
+    Height = 30
+    Top = 8
+    Width = 136
+    Caption = 'Relatório categoria'
+    OnClick = btnGerarRelClick
+    TabOrder = 0
+  end
+  object frReport1: TfrReport
+    Dataset = frDBdsClientes
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 24
+    Top = 88
+  end
+  object frDBdsClientes: TfrDBDataSet
+    DataSet = DMF.qryCliente
+    Left = 120
+    Top = 88
+  end
+end
