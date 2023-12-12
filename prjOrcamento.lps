@@ -99,7 +99,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="51"/>
         <CursorPos Y="52"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="137"/>
       </Unit>
       <Unit>
         <Filename Value="Units\cadusuario.pas"/>
@@ -111,7 +111,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos X="17" Y="63"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="133"/>
       </Unit>
       <Unit>
         <Filename Value="Units\orcamento.pas"/>
@@ -122,7 +122,7 @@
         <UnitName Value="Orcamento"/>
         <TopLine Value="192"/>
         <CursorPos X="66" Y="208"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="132"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -136,7 +136,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="30"/>
         <CursorPos X="36" Y="45"/>
-        <UsageCount Value="130"/>
+        <UsageCount Value="131"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -150,7 +150,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="30" Y="40"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="129"/>
       </Unit>
       <Unit>
         <Filename Value="Units\bucaproduto.pas"/>
@@ -162,7 +162,7 @@
         <EditorIndex Value="5"/>
         <TopLine Value="283"/>
         <CursorPos X="59" Y="294"/>
-        <UsageCount Value="116"/>
+        <UsageCount Value="117"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -173,10 +173,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="CadOrcamentoItem"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="54"/>
-        <CursorPos X="73" Y="60"/>
-        <UsageCount Value="80"/>
+        <TopLine Value="99"/>
+        <CursorPos X="9" Y="113"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -190,7 +191,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="37" Y="32"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="Units\relclientes.pas"/>
@@ -199,11 +200,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RelClientes"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="29"/>
+        <TopLine Value="16"/>
         <CursorPos X="22" Y="47"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -216,7 +216,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="20"/>
         <CursorPos X="54" Y="37"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="Units\buscaproduto.pas"/>
@@ -269,86 +269,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="200" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="208" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="197" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="209" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="197" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="198" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="204" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="205" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="206" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="205" Column="34" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="197" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="198" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="204" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="205" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="207" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="197" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="198" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="200" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="207" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
-        <Caret Line="197" TopLine="193"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\orcamento.pas"/>
         <Caret Line="209" Column="66" TopLine="193"/>
       </Position>
       <Position>
@@ -386,6 +306,86 @@
       <Position>
         <Filename Value="Units\relclientes.pas"/>
         <Caret Line="41" Column="9" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="60" Column="73" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="97" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="98" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="97" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="77" Column="3" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="81" Column="27" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="80" Column="27" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="78" Column="82" TopLine="67"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="79" Column="82" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="80" Column="82" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="79" Column="82" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="80" Column="82" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="108" Column="27" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="107" Column="27" TopLine="73"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="108" Column="27" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="107" Column="27" TopLine="73"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="108" Column="27" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="94" Column="3" TopLine="75"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="114" Column="9" TopLine="100"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\cadorcamentoitem.pas"/>
+        <Caret Line="113" Column="9" TopLine="99"/>
       </Position>
     </JumpHistory>
     <RunParams>

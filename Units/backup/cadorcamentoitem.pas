@@ -7,14 +7,14 @@ interface
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBCtrls,
   StdCtrls, BucaProduto, DM,
-  Buttons;
+  Buttons, MaskEdit;
 
 type
 
   { TCadOrcamentoItemF }
 
   TCadOrcamentoItemF = class(TForm)
-    btnGravarItemOrc: TButton;
+    BitBtn1: TBitBtn;
     btnCancelar: TButton;
     dbEdtProdDesc: TDBEdit;
     dbEdtQtdProd: TDBEdit;
@@ -28,13 +28,14 @@ type
     Label14: TLabel;
     Label15: TLabel;
     SpeedButton3: TSpeedButton;
+    procedure BitBtn1Click(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnGravarItemOrcClick(Sender: TObject);
     procedure dbEdtQtdProdChange(Sender: TObject);
     procedure dbEdtQtdProdEditingDone(Sender: TObject);
     procedure dbEdtQtdProdExit(Sender: TObject);
     procedure edtQtdProdChange(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure btnGravarItemOrcamentoClick(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
   private
 
@@ -57,6 +58,7 @@ begin
   BucaProdutoF := TBucaProdutoF.Create(self);
   BucaProdutoF.ShowModal;
   edtProdId.Field.AsString := DMF.qryProdutoid.AsString;
+  dbEdtValorUn.Field.Value:=StrToFloat(BucaProdutoF.lblValorProd.Caption);
   DMF.qryCliente.Open;
   dbEdtQtdProd.SetFocus;
 end;
@@ -66,14 +68,9 @@ begin
 
 end;
 
-procedure TCadOrcamentoItemF.SpeedButton1Click(Sender: TObject);
+procedure TCadOrcamentoItemF.btnGravarItemOrcamentoClick(Sender: TObject);
 begin
-
-end;
-
-procedure TCadOrcamentoItemF.btnGravarItemOrcClick(Sender: TObject);
-begin
-  DMF.qryOrcamentoItemqt_produto.AsFloat := dbEdtQtdProd.Field.AsFloat;
+    DMF.qryOrcamentoItemqt_produto.AsFloat := dbEdtQtdProd.Field.AsFloat;
   DMF.qryOrcamentoItemvl_unitario.AsFloat := dbEdtValorUn.Field.AsFloat;
   DMF.qryOrcamentoItemvl_total.AsFloat := dbEdtValorTot.Field.AsFloat;
 
@@ -85,15 +82,33 @@ begin
   CadOrcamentoItemF.Close;
 end;
 
+procedure TCadOrcamentoItemF.btnGravarItemOrcClick(Sender: TObject);
+begin
+
+end;
+
 procedure TCadOrcamentoItemF.btnCancelarClick(Sender: TObject);
 begin
   DMF.qryOrcamentoItem.Cancel;
   close;
 end;
 
+procedure TCadOrcamentoItemF.BitBtn1Click(Sender: TObject);
+begin
+    DMF.qryOrcamentoItemqt_produto.AsFloat := dbEdtQtdProd.Field.AsFloat;
+  DMF.qryOrcamentoItemvl_unitario.AsFloat := dbEdtValorUn.Field.AsFloat;
+  DMF.qryOrcamentoItemvl_total.AsFloat := dbEdtValorTot.Field.AsFloat;
+
+  if DMF.qryOrcamento.State in [dsInsert, dsEdit] then
+  begin
+    DMF.qryOrcamento.Post;
+  end;
+  DMF.qryOrcamentoItem.Post;
+  CadOrcamentoItemF.Close;
+end;
+
 procedure TCadOrcamentoItemF.dbEdtQtdProdChange(Sender: TObject);
 begin
-
 
 end;
 
