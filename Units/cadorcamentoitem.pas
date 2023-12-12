@@ -27,7 +27,7 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
-    SpeedButton3: TSpeedButton;
+    btnBuscarProd: TSpeedButton;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
@@ -37,7 +37,7 @@ type
     procedure dbEdtQtdProdExit(Sender: TObject);
     procedure edtQtdProdChange(Sender: TObject);
     procedure btnGravarItemOrcamentoClick(Sender: TObject);
-    procedure SpeedButton3Click(Sender: TObject);
+    procedure btnBuscarProdClick(Sender: TObject);
   private
 
   public
@@ -53,7 +53,7 @@ implementation
 
 { TCadOrcamentoItemF }
 
-procedure TCadOrcamentoItemF.SpeedButton3Click(Sender: TObject);
+procedure TCadOrcamentoItemF.btnBuscarProdClick(Sender: TObject);
 begin
 
   BucaProdutoF := TBucaProdutoF.Create(self);

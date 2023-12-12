@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBCtrls,
   StdCtrls, BucaProduto, DM,
-  Buttons, MaskEdit;
+  Buttons, MaskEdit, ExtCtrls;
 
 type
 
@@ -15,7 +15,7 @@ type
 
   TCadOrcamentoItemF = class(TForm)
     BitBtn1: TBitBtn;
-    btnCancelar: TButton;
+    BitBtn2: TBitBtn;
     dbEdtProdDesc: TDBEdit;
     dbEdtQtdProd: TDBEdit;
     dbEdtValorUn: TDBEdit;
@@ -27,8 +27,9 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
-    SpeedButton3: TSpeedButton;
+    btnBuscarProd: TSpeedButton;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure btnGravarItemOrcClick(Sender: TObject);
     procedure dbEdtQtdProdChange(Sender: TObject);
@@ -36,7 +37,7 @@ type
     procedure dbEdtQtdProdExit(Sender: TObject);
     procedure edtQtdProdChange(Sender: TObject);
     procedure btnGravarItemOrcamentoClick(Sender: TObject);
-    procedure SpeedButton3Click(Sender: TObject);
+    procedure btnBuscarProdClick(Sender: TObject);
   private
 
   public
@@ -52,7 +53,7 @@ implementation
 
 { TCadOrcamentoItemF }
 
-procedure TCadOrcamentoItemF.SpeedButton3Click(Sender: TObject);
+procedure TCadOrcamentoItemF.btnBuscarProdClick(Sender: TObject);
 begin
 
   BucaProdutoF := TBucaProdutoF.Create(self);
@@ -89,8 +90,7 @@ end;
 
 procedure TCadOrcamentoItemF.btnCancelarClick(Sender: TObject);
 begin
-  DMF.qryOrcamentoItem.Cancel;
-  close;
+
 end;
 
 procedure TCadOrcamentoItemF.BitBtn1Click(Sender: TObject);
@@ -105,6 +105,12 @@ begin
   end;
   DMF.qryOrcamentoItem.Post;
   CadOrcamentoItemF.Close;
+end;
+
+procedure TCadOrcamentoItemF.BitBtn2Click(Sender: TObject);
+begin
+  DMF.qryOrcamentoItem.Cancel;
+  close;
 end;
 
 procedure TCadOrcamentoItemF.dbEdtQtdProdChange(Sender: TObject);

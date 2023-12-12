@@ -12,7 +12,7 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Left = 256
     Height = 21
     Top = 41
-    Width = 80
+    Width = 40
     DataField = 'produtoid'
     DataSource = dsOrcamentoItem
     ReadOnly = True
@@ -26,11 +26,11 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     TabOrder = 0
   end
   object Label11: TLabel
-    Left = 160
+    Left = 168
     Height = 21
     Top = 41
-    Width = 78
-    Caption = 'produto id'
+    Width = 85
+    Caption = 'Produto ID:'
     Font.CharSet = ANSI_CHARSET
     Font.Color = 14120960
     Font.Height = -16
@@ -41,11 +41,11 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     ParentFont = False
   end
   object Label12: TLabel
-    Left = 152
+    Left = 115
     Height = 21
-    Top = 89
-    Width = 94
-    Caption = 'produto desc'
+    Top = 91
+    Width = 138
+    Caption = 'Produto Descrição:'
     Font.CharSet = ANSI_CHARSET
     Font.Color = 14120960
     Font.Height = -16
@@ -56,11 +56,11 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     ParentFont = False
   end
   object Label13: TLabel
-    Left = 208
+    Left = 78
     Height = 21
-    Top = 139
-    Width = 26
-    Caption = 'qtd'
+    Top = 137
+    Width = 175
+    Caption = 'Quantidade de produto:'
     Font.CharSet = ANSI_CHARSET
     Font.Color = 14120960
     Font.Height = -16
@@ -71,11 +71,11 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     ParentFont = False
   end
   object Label14: TLabel
-    Left = 176
+    Left = 142
     Height = 21
-    Top = 185
-    Width = 63
-    Caption = 'valor un'
+    Top = 187
+    Width = 111
+    Caption = 'Valor Unitário:'
     Font.CharSet = ANSI_CHARSET
     Font.Color = 14120960
     Font.Height = -16
@@ -86,11 +86,11 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     ParentFont = False
   end
   object Label15: TLabel
-    Left = 161
+    Left = 166
     Height = 21
     Top = 235
-    Width = 78
-    Caption = 'valot total'
+    Width = 87
+    Caption = 'Valor Total:'
     Font.CharSet = ANSI_CHARSET
     Font.Color = 14120960
     Font.Height = -16
@@ -100,20 +100,20 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     ParentColor = False
     ParentFont = False
   end
-  object SpeedButton3: TSpeedButton
-    Left = 344
+  object btnBuscarProd: TSpeedButton
+    Left = 296
     Height = 22
     Top = 40
     Width = 23
     Caption = '...'
-    OnClick = SpeedButton3Click
+    OnClick = btnBuscarProdClick
   end
   object dbEdtProdDesc: TDBEdit
     Left = 256
     Height = 21
     Top = 91
-    Width = 80
-    DataField = 'descrição'
+    Width = 176
+    DataField = 'descricao'
     DataSource = BucaProdutoF.dsBuscaProduto
     BorderStyle = bsNone
     Color = 14211288
@@ -127,7 +127,7 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Left = 256
     Height = 21
     Top = 137
-    Width = 80
+    Width = 40
     DataField = 'qt_produto'
     DataSource = dsOrcamentoItem
     Alignment = taRightJustify
@@ -161,7 +161,7 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Left = 256
     Height = 21
     Top = 235
-    Width = 80
+    Width = 96
     DataField = 'vl_total'
     DataSource = dsOrcamentoItem
     Alignment = taRightJustify

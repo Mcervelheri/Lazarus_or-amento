@@ -6,6 +6,8 @@ object RelProdutosF: TRelProdutosF
   Caption = 'Relatório de produtos'
   ClientHeight = 148
   ClientWidth = 194
+  OnClose = FormClose
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object btnGerarRel: TBitBtn

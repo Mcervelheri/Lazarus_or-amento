@@ -65,7 +65,7 @@ procedure TLoginF.edtSenhaKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if ord(Key) = 13 then
-  btnLoginClick(Sender: TObject);
+  btnLoginClick(Sender);
 end;
 
 function TLoginF.ValidaUsuario(pUsusario: String; pSenha: String): Boolean;

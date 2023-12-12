@@ -1037,33 +1037,22 @@ inherited CadProdutoF: TCadProdutoF
           item
             PickList.Strings = (            )
             Title.Caption = 'id'
-            Width = 30
             FieldName = 'id'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'status'
-            Width = 40
-            FieldName = 'status'
-          end        
-          item
-            PickList.Strings = (            )
             Title.Caption = 'categoria'
-            Width = 55
             FieldName = 'categoria'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'descrição'
-            Width = 250
-            FieldName = 'descrição'
+            Title.Caption = 'descricao'
+            FieldName = 'descricao'
           end        
           item
             PickList.Strings = (            )
             Title.Caption = 'valor_venda'
-            Width = 120
             FieldName = 'valor_venda'
-            DisplayFormat = '.00'
           end        
           item
             PickList.Strings = (            )
@@ -1072,9 +1061,13 @@ inherited CadProdutoF: TCadProdutoF
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'obeservação'
-            Width = 200
-            FieldName = 'obeservação'
+            Title.Caption = 'status'
+            FieldName = 'status'
+          end        
+          item
+            PickList.Strings = (            )
+            Title.Caption = 'observacao'
+            FieldName = 'observacao'
           end>
         Flat = True
         OnDblClick = DBGrid1DblClick
@@ -1090,6 +1083,8 @@ inherited CadProdutoF: TCadProdutoF
           OnClick = btnSalvarClick
         end
         inherited btnCancelar: TSpeedButton
+          Top = 384
+          Anchors = [akLeft, akBottom]
           OnClick = btnCancelarClick
         end
         inherited btnExcluir: TSpeedButton
@@ -1117,7 +1112,7 @@ inherited CadProdutoF: TCadProdutoF
           Height = 28
           Top = 88
           Width = 364
-          DataField = 'descrição'
+          DataField = 'descricao'
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
@@ -1237,14 +1232,14 @@ inherited CadProdutoF: TCadProdutoF
           Height = 28
           Top = 288
           Width = 364
-          DataField = 'obeservação'
+          DataField = 'observacao'
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
-          MaxLength = 0
+          MaxLength = 300
           ParentFont = False
           TabOrder = 4
         end
@@ -1355,7 +1350,6 @@ inherited CadProdutoF: TCadProdutoF
     Left = 24
   end
   object dsCategoria: TDataSource[2]
-    DataSet = DMF.qryCategoria
     Left = 64
     Top = 368
   end

@@ -1,0 +1,24 @@
+object RelOrcItensF: TRelOrcItensF
+  Left = 675
+  Height = 188
+  Top = 298
+  Width = 213
+  Caption = 'Relatório de orçamento itens'
+  OnClose = FormClose
+  OnShow = FormShow
+  LCLVersion = '2.2.6.0'
+  object frReport1: TfrReport
+    Dataset = frDBdsOrcamentoItem
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 60
+    Top = 108
+  end
+  object frDBdsOrcamentoItem: TfrDBDataSet
+    DataSet = DMF.qryOrcamentoItem
+    Left = 140
+    Top = 108
+  end
+end

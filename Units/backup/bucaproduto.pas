@@ -291,7 +291,7 @@ end;
 
 procedure TBucaProdutoF.DBGrid1DblClick(Sender: TObject);
 begin
-  lblValorProd.Caption:=DMF.qryProdutovalor_venda;
+  lblValorProd.Caption:=DMF.qryProdutovalor_venda.AsString;
   close;
 end;
 

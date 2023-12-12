@@ -13,10 +13,11 @@ type
   { TRelProdutosF }
 
   TRelProdutosF = class(TForm)
-    btnGerarRel: TBitBtn;
     frDBdsProduto: TfrDBDataSet;
     frReport1: TfrReport;
     procedure btnGerarRelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -37,6 +38,20 @@ begin
   frReport1.LoadFromFile('Relatórios\RelProdutos.lrf');
   frReport1.PrepareReport;
   frReport1.ShowReport;
+end;
+
+procedure TRelProdutosF.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+  CloseAction:=caFree;
+end;
+
+procedure TRelProdutosF.FormShow(Sender: TObject);
+begin
+   frReport1.LoadFromFile('Relatórios\RelProdutos.lrf');
+  frReport1.PrepareReport;
+  frReport1.ShowReport;
+  close;
 end;
 
 end.

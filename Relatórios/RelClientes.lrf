@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="2023-12-10 18:44:20"/>
-    <ReportLastChange Value="2023-12-12 12:41:20"/>
+    <ReportLastChange Value="2023-12-12 17:34:04"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -147,7 +147,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="Relatório de Categorias&#xD;&#xA;"/>
+            <Memo Value="Relatório de Clientes&#xD;&#xA;"/>
             <Script Value=""/>
             <GapX Value="0"/>
             <GapY Value="0"/>
@@ -188,8 +188,8 @@
           <Size>
             <Left Value="6"/>
             <Top Value="6"/>
-            <Width Value="128"/>
-            <Height Value="130"/>
+            <Width Value="132"/>
+            <Height Value="142"/>
           </Size>
           <Flags Value="5"/>
           <FillColor Value="clNone"/>
@@ -278,9 +278,9 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="26"/>
+            <Left Value="6"/>
             <Top Value="182"/>
-            <Width Value="96"/>
+            <Width Value="116"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -390,9 +390,9 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="26"/>
+            <Left Value="6"/>
             <Top Value="142"/>
-            <Width Value="96"/>
+            <Width Value="116"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -496,32 +496,6 @@
           <Cursor Value="0"/>
         </Object10>
         <Object11>
-          <Name Value="Line1"/>
-          <ClassName Value="TfrLineView"/>
-          <Visible Value="True"/>
-          <Typ Value="gtLine"/>
-          <StreamMode Value="0"/>
-          <Size>
-            <Left Value="6"/>
-            <Top Value="206"/>
-            <Width Value="732"/>
-            <Height Value="0"/>
-          </Size>
-          <Flags Value="0"/>
-          <Frames>
-            <FrameColor Value="clBlack"/>
-            <FrameStyle Value="frsSolid"/>
-            <FrameWidth Value="2"/>
-            <Restrictions Value=""/>
-          </Frames>
-          <Tag Value=""/>
-          <FURLInfo Value=""/>
-          <Data>
-            <GapX Value="0"/>
-            <GapY Value="0"/>
-          </Data>
-        </Object11>
-        <Object12>
           <Name Value="Memo7"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
@@ -576,8 +550,8 @@
           <Angle Value="0"/>
           <Justify Value="False"/>
           <Cursor Value="0"/>
-        </Object12>
-        <Object13>
+        </Object11>
+        <Object12>
           <Name Value="Memo8"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
@@ -627,13 +601,13 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taLeftJustify"/>
+          <Alignment Value="taCenter"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
           <Justify Value="False"/>
           <Cursor Value="0"/>
-        </Object13>
-        <Object14>
+        </Object12>
+        <Object13>
           <Name Value="Memo10"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
@@ -683,13 +657,13 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taLeftJustify"/>
+          <Alignment Value="taCenter"/>
           <Layout Value="tlTop"/>
           <Angle Value="0"/>
           <Justify Value="False"/>
           <Cursor Value="0"/>
-        </Object14>
-        <Object15>
+        </Object13>
+        <Object14>
           <Name Value="Memo11"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
@@ -744,8 +718,8 @@
           <Angle Value="0"/>
           <Justify Value="False"/>
           <Cursor Value="0"/>
-        </Object15>
-        <Object16>
+        </Object14>
+        <Object15>
           <Name Value="Memo12"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
@@ -800,16 +774,172 @@
           <Angle Value="0"/>
           <Justify Value="False"/>
           <Cursor Value="0"/>
+        </Object15>
+        <Object16>
+          <Name Value="Line2"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="0"/>
+            <Top Value="184"/>
+            <Width Value="0"/>
+            <Height Value="0"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
         </Object16>
         <Object17>
+          <Name Value="Line1"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="122"/>
+            <Top Value="144"/>
+            <Width Value="0"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
+        </Object17>
+        <Object18>
           <Name Value="Line3"/>
           <ClassName Value="TfrLineView"/>
           <Visible Value="True"/>
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="6"/>
-            <Top Value="1041"/>
+            <Left Value="183"/>
+            <Top Value="144"/>
+            <Width Value="0"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
+        </Object18>
+        <Object19>
+          <Name Value="Line5"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="122"/>
+            <Top Value="184"/>
+            <Width Value="0"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
+        </Object19>
+        <Object20>
+          <Name Value="Line6"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="184"/>
+            <Top Value="184"/>
+            <Width Value="0"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
+        </Object20>
+        <Object21>
+          <Name Value="Line7"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="366"/>
+            <Top Value="184"/>
+            <Width Value="0"/>
+            <Height Value="16"/>
+          </Size>
+          <Flags Value="0"/>
+          <Frames>
+            <FrameColor Value="clBlack"/>
+            <FrameStyle Value="frsSolid"/>
+            <FrameWidth Value="2"/>
+            <Restrictions Value=""/>
+          </Frames>
+          <Tag Value=""/>
+          <FURLInfo Value=""/>
+          <Data>
+            <GapX Value="0"/>
+            <GapY Value="0"/>
+          </Data>
+        </Object21>
+        <Object22>
+          <Name Value="Line8"/>
+          <ClassName Value="TfrLineView"/>
+          <Visible Value="True"/>
+          <Typ Value="gtLine"/>
+          <StreamMode Value="0"/>
+          <Size>
+            <Left Value="8"/>
+            <Top Value="176"/>
             <Width Value="732"/>
             <Height Value="0"/>
           </Size>
@@ -826,8 +956,8 @@
             <GapX Value="0"/>
             <GapY Value="0"/>
           </Data>
-        </Object17>
-        <ObjectCount Value="17"/>
+        </Object22>
+        <ObjectCount Value="22"/>
       </Page1>
       <FVal>
         <Count Value="0"/>

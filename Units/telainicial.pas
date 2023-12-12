@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, EditBtn,
   CadCategoria, CadProduto, CadCliente, CadUsuario, Orcamento, RelCategoria,
-  RelProdutos, RelClientes, RelOrcamento;
+  RelProdutos, RelClientes, RelOrcamento, RelOrcItens;
 
 type
 
@@ -16,6 +16,7 @@ type
   TTelaInicialF = class(TForm)
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
+    miOrcamentoItem: TMenuItem;
     miRelOrcamentos: TMenuItem;
     miRelClientes: TMenuItem;
     miRelProduto: TMenuItem;
@@ -35,6 +36,7 @@ type
     procedure miCategoriaClick(Sender: TObject);
     procedure miClienteClick(Sender: TObject);
     procedure miOrcamentoClick(Sender: TObject);
+    procedure miOrcamentoItemClick(Sender: TObject);
     procedure miProdutoClick(Sender: TObject);
     procedure miRelCategoriaClick(Sender: TObject);
     procedure miRelClientesClick(Sender: TObject);
@@ -80,6 +82,12 @@ procedure TTelaInicialF.miOrcamentoClick(Sender: TObject);
 begin
     OrcamentoF:=TOrcamentoF.create(self);
     OrcamentoF.show;
+end;
+
+procedure TTelaInicialF.miOrcamentoItemClick(Sender: TObject);
+begin
+  RelOrcItensF:=TRelOrcItensF.create(self);
+  RelOrcItensF.ShowModal;
 end;
 
 procedure TTelaInicialF.miProdutoClick(Sender: TObject);

@@ -13,10 +13,11 @@ type
   { TRelOrcamentoF }
 
   TRelOrcamentoF = class(TForm)
-    btnGerarRel: TBitBtn;
     frDBdsOrcamento: TfrDBDataSet;
     frReport1: TfrReport;
     procedure btnGerarRelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -32,11 +33,24 @@ implementation
 
 { TRelOrcamentoF }
 
+
 procedure TRelOrcamentoF.btnGerarRelClick(Sender: TObject);
 begin
-     frReport1.LoadFromFile('Relatórios\RelOrcamentos.lrf');
+
+end;
+
+procedure TRelOrcamentoF.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  CloseAction:=caFree;
+end;
+
+procedure TRelOrcamentoF.FormShow(Sender: TObject);
+begin
+  frReport1.LoadFromFile('Relatórios\RelOrcamentos.lrf');
    frReport1.PrepareReport;
    frReport1.ShowReport;
+   close;
 end;
 
 end.

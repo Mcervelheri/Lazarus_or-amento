@@ -12,6 +12,7 @@ type
   { TDMF }
 
   TDMF = class(TDataModule)
+    qryCategoriadescricao: TStringField;
     qryCategoriadescrio: TStringField;
     qryCategoriaid: TLongintField;
     qryClientecpf_cnpj: TStringField;
@@ -33,9 +34,9 @@ type
     qryOrcamentovl_total_orcamento: TFloatField;
     qryProdutocategoria: TLongintField;
     qryProdutodata_cadastro: TDateTimeField;
-    qryProdutodescrio: TStringField;
+    qryProdutodescricao: TStringField;
     qryProdutoid: TLongintField;
-    qryProdutoobservao: TStringField;
+    qryProdutoobservacao: TStringField;
     qryProdutostatus: TStringField;
     qryProdutovalor_venda: TFloatField;
     qryUsuarioid: TLongintField;

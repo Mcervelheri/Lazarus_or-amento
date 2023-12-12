@@ -19,7 +19,6 @@ type
     edtDataOrc: TDBDateEdit;
     edtDataVal: TDBDateEdit;
     edtValorTotalOrc: TDBEdit;
-    lblDescrCli: TDBText;
     edtCliente: TDBEdit;
     dsOrcamentoItem: TDataSource;
     DBGrid2: TDBGrid;

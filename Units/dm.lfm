@@ -69,8 +69,8 @@ object DMF: TDMF
     SQL.Strings = (
       'select produtoid as id, '
       'categoriaprodutoid as categoria,'
-      'ds_produto as descrição,'
-      'obs_produto as observação,'
+      'ds_produto as descricao,'
+      'obs_produto as observacao,'
       'vl_venda_produto as valor_venda,'
       'dt_cadastro_produto as data_cadastro,'
       'status_produto as status '
@@ -98,9 +98,9 @@ object DMF: TDMF
       ReadOnly = False
       Required = True
     end
-    object qryProdutodescrio: TStringField
+    object qryProdutodescricao: TStringField
       FieldKind = fkData
-      FieldName = 'descrição'
+      FieldName = 'descricao'
       Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
@@ -108,20 +108,10 @@ object DMF: TDMF
       Required = True
       Size = 50
     end
-    object qryProdutoobservao: TStringField
-      FieldKind = fkData
-      FieldName = 'observação'
-      Index = 3
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = False
-      Size = 300
-    end
     object qryProdutovalor_venda: TFloatField
       FieldKind = fkData
       FieldName = 'valor_venda'
-      Index = 4
+      Index = 3
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -132,7 +122,7 @@ object DMF: TDMF
     object qryProdutodata_cadastro: TDateTimeField
       FieldKind = fkData
       FieldName = 'data_cadastro'
-      Index = 5
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -141,12 +131,22 @@ object DMF: TDMF
     object qryProdutostatus: TStringField
       FieldKind = fkData
       FieldName = 'status'
-      Index = 6
+      Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
       Size = 10
+    end
+    object qryProdutoobservacao: TStringField
+      FieldKind = fkData
+      FieldName = 'observacao'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 300
     end
   end
   object qryCliente: TZQuery
@@ -256,6 +256,7 @@ object DMF: TDMF
     Active = True
     SQL.Strings = (
       'select orcamentoid, clienteid, dt_orcamento, dt_validade_orcamento, vl_total_orcamento from orcamento'
+      'order by orcamentoid desc'
     )
     Params = <>
     Left = 120
@@ -278,10 +279,24 @@ object DMF: TDMF
       ReadOnly = False
       Required = True
     end
+    object TStringField
+      FieldKind = fkLookup
+      FieldName = 'nome'
+      Index = 2
+      KeyFields = 'clienteid'
+      LookupCache = False
+      LookupDataSet = qryCliente
+      LookupKeyFields = 'id'
+      LookupResultField = 'nome'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
     object qryOrcamentodt_orcamento: TDateTimeField
       FieldKind = fkData
       FieldName = 'dt_orcamento'
-      Index = 2
+      Index = 3
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -290,7 +305,7 @@ object DMF: TDMF
     object qryOrcamentodt_validade_orcamento: TDateTimeField
       FieldKind = fkData
       FieldName = 'dt_validade_orcamento'
-      Index = 3
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -299,7 +314,7 @@ object DMF: TDMF
     object qryOrcamentovl_total_orcamento: TFloatField
       FieldKind = fkData
       FieldName = 'vl_total_orcamento'
-      Index = 4
+      Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -312,7 +327,7 @@ object DMF: TDMF
     Connection = ZConnection1
     Active = True
     SQL.Strings = (
-      'select orcamentoid, orcamentoitemid, produtoid, qt_produto, vl_unitario, vl_total from orcamento_item'
+      'select orcamentoid, orcamentoitemid, produtoid, qt_produto, vl_unitario, vl_total from orcamento_item order by orcamentoid desc'
     )
     Params = <>
     Left = 120
@@ -344,10 +359,24 @@ object DMF: TDMF
       ReadOnly = False
       Required = False
     end
+    object TStringField
+      FieldKind = fkLookup
+      FieldName = 'descricao'
+      Index = 3
+      KeyFields = 'produtoid'
+      LookupCache = False
+      LookupDataSet = qryProduto
+      LookupKeyFields = 'id'
+      LookupResultField = 'descricao'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
     object qryOrcamentoItemqt_produto: TFloatField
       FieldKind = fkData
       FieldName = 'qt_produto'
-      Index = 3
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -357,7 +386,7 @@ object DMF: TDMF
     object qryOrcamentoItemvl_unitario: TFloatField
       FieldKind = fkData
       FieldName = 'vl_unitario'
-      Index = 4
+      Index = 5
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
@@ -368,7 +397,7 @@ object DMF: TDMF
     object qryOrcamentoItemvl_total: TFloatField
       FieldKind = fkData
       FieldName = 'vl_total'
-      Index = 5
+      Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False

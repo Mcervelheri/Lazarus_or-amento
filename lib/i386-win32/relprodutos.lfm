@@ -4,19 +4,10 @@ object RelProdutosF: TRelProdutosF
   Top = 242
   Width = 194
   Caption = 'Relatório de produtos'
-  ClientHeight = 148
-  ClientWidth = 194
+  OnClose = FormClose
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
-  object btnGerarRel: TBitBtn
-    Left = 32
-    Height = 30
-    Top = 8
-    Width = 136
-    Caption = 'Relatório produtos'
-    OnClick = btnGerarRelClick
-    TabOrder = 0
-  end
   object frReport1: TfrReport
     Dataset = frDBdsProduto
     InitialZoom = pzDefault

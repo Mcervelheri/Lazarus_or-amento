@@ -1,7 +1,7 @@
 object TelaInicialF: TTelaInicialF
-  Left = 615
+  Left = 553
   Height = 240
-  Top = 382
+  Top = 329
   Width = 320
   Caption = 'Tela Inicial'
   Menu = MainMenu1
@@ -286,6 +286,10 @@ object TelaInicialF: TTelaInicialF
       object miRelOrcamentos: TMenuItem
         Caption = 'Orçamentos'
         OnClick = miRelOrcamentosClick
+      end
+      object miOrcamentoItem: TMenuItem
+        Caption = 'Orçamento Itens'
+        OnClick = miOrcamentoItemClick
       end
     end
     object miSobre: TMenuItem

@@ -13,10 +13,10 @@ type
   { TRelCategoriaF }
 
   TRelCategoriaF = class(TForm)
-    btnGerarRel: TBitBtn;
     frDBdsCategoria: TfrDBDataSet;
     frReport1: TfrReport;
-    procedure btnGerarRelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -32,11 +32,20 @@ implementation
 
 { TRelCategoriaF }
 
-procedure TRelCategoriaF.btnGerarRelClick(Sender: TObject);
+
+
+procedure TRelCategoriaF.FormShow(Sender: TObject);
 begin
-   frReport1.LoadFromFile('Relatórios\RelCategorias.lrf');
+  frReport1.LoadFromFile('Relatórios\RelCategorias.lrf');
    frReport1.PrepareReport;
    frReport1.ShowReport;
+   close;
+end;
+
+procedure TRelCategoriaF.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  CloseAction:=caFree;
 end;
 
 end.

@@ -7,6 +7,7 @@ object TelaInicialF: TTelaInicialF
   Menu = MainMenu1
   OnClose = FormClose
   LCLVersion = '2.2.6.0'
+  WindowState = wsMaximized
   object MainMenu1: TMainMenu
     Left = 288
     object miCadastro: TMenuItem
@@ -286,6 +287,10 @@ object TelaInicialF: TTelaInicialF
       object miRelOrcamentos: TMenuItem
         Caption = 'Orçamentos'
         OnClick = miRelOrcamentosClick
+      end
+      object miOrcamentoItem: TMenuItem
+        Caption = 'Orçamento Itens'
+        OnClick = miOrcamentoItemClick
       end
     end
     object miSobre: TMenuItem

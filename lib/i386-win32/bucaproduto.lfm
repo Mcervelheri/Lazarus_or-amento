@@ -1065,12 +1065,9 @@ object BucaProdutoF: TBucaProdutoF
         FieldName = 'categoria'
       end    
       item
-        Title.Caption = 'descrição'
-        FieldName = 'descrição'
-      end    
-      item
-        Title.Caption = 'observação'
-        FieldName = 'observação'
+        Title.Caption = 'descricao'
+        Width = 200
+        FieldName = 'descricao'
       end    
       item
         Title.Caption = 'valor_venda'
@@ -1083,6 +1080,10 @@ object BucaProdutoF: TBucaProdutoF
       item
         Title.Caption = 'status'
         FieldName = 'status'
+      end    
+      item
+        Title.Caption = 'observacao'
+        FieldName = 'observacao'
       end>
     DataSource = dsBuscaProduto
     FixedColor = 14211288

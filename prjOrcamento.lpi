@@ -170,8 +170,17 @@
         <Filename Value="Relatórios\relorcamento.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RelOrcamentoF"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RelOrcamento"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\relorcitens.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="RelOrcItensF"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="RelOrcItens"/>
       </Unit>
     </Units>
   </ProjectOptions>

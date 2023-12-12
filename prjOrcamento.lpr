@@ -13,7 +13,7 @@ uses
   Forms, datetimectrls, zcomponent, CadModelo, DM, CadCategoria, Login,
   TelaInicial, CadProduto, CadCliente, CadUsuario, Orcamento, BuscaCliente,
   RelCategoria, BucaProduto, CadOrcamentoItem, relprodutos, RelClientes, 
-RelOrcamento;
+RelOrcamento, RelOrcItens;
 
 {$R *.res}
 
@@ -21,9 +21,9 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TOrcamentoF, OrcamentoF);
   Application.CreateForm(TLoginF, LoginF);
   Application.CreateForm(TDMF, DMF);
+  Application.CreateForm(TRelOrcItensF, RelOrcItensF);
   Application.Run;
 end.
 

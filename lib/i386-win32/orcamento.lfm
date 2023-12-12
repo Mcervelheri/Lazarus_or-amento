@@ -1,7 +1,7 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 225
+  Left = 318
   Height = 507
-  Top = 89
+  Top = 153
   Width = 1111
   Caption = 'Orcamento'
   ClientHeight = 507
@@ -43,34 +43,28 @@ inherited OrcamentoF: TOrcamentoF
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'ID'
-            Width = 40
+            Title.Caption = 'orcamentoid'
             FieldName = 'orcamentoid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Cliente'
-            Width = 50
+            Title.Caption = 'clienteid'
             FieldName = 'clienteid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Data Orçamento'
-            Width = 100
+            Title.Caption = 'dt_orcamento'
             FieldName = 'dt_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Val Orçamento'
-            Width = 100
+            Title.Caption = 'dt_validade_orcamento'
             FieldName = 'dt_validade_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Valor Total'
-            Width = 80
+            Title.Caption = 'vl_total_orcamento'
             FieldName = 'vl_total_orcamento'
-            DisplayFormat = '###,##0.00'
           end>
         Flat = True
         Font.Style = [fsBold, fsItalic]
@@ -226,7 +220,6 @@ inherited OrcamentoF: TOrcamentoF
           NumGlyphs = 1
           MaxLength = 0
           TabOrder = 4
-          Text = '18/02/2022'
           DataField = 'dt_orcamento'
           DataSource = dsModelo
         end
@@ -241,7 +234,6 @@ inherited OrcamentoF: TOrcamentoF
           NumGlyphs = 1
           MaxLength = 0
           TabOrder = 5
-          Text = '19/02/2022'
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
@@ -285,6 +277,18 @@ inherited OrcamentoF: TOrcamentoF
             item
               Title.Caption = 'produtoid'
               FieldName = 'produtoid'
+            end          
+            item
+              PickList.Strings = (
+                'Produto15'
+                'teste5'
+                'FOLHA DIAMANTE'
+                'CHAPA DOURADA'
+                'FOLHA METALICA'
+                'CHAPA METALICA'
+              )
+              Title.Caption = 'descricao'
+              FieldName = 'descricao'
             end          
             item
               Title.Caption = 'qt_produto'

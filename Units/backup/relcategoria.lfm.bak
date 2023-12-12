@@ -1,11 +1,13 @@
 object RelCategoriaF: TRelCategoriaF
-  Left = 893
+  Left = 670
   Height = 148
-  Top = 383
+  Top = 322
   Width = 194
   Caption = 'Relatório de Categoria'
   ClientHeight = 148
   ClientWidth = 194
+  OnClose = FormClose
+  OnShow = FormShow
   LCLVersion = '2.2.6.0'
   object btnGerarRel: TBitBtn
     Left = 32
@@ -13,7 +15,6 @@ object RelCategoriaF: TRelCategoriaF
     Top = 8
     Width = 136
     Caption = 'Relatório categoria'
-    OnClick = btnGerarRelClick
     TabOrder = 0
   end
   object frReport1: TfrReport
