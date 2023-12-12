@@ -19,10 +19,10 @@ type
     edtPesquisarDesc: TEdit;
     edtPesquisarID: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     Label5: TLabel;
     Panel1: TPanel;
     procedure DBGrid1DblClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
   private
 
   public
@@ -42,6 +42,7 @@ implementation
 
 procedure TBuscaClienteF.DBGrid1DblClick(Sender: TObject);
 begin
+  Label2.Caption:= DMF.qryClienteclienteid.AsString;;
   close;
 end;
 

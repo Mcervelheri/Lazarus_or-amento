@@ -15,31 +15,10 @@ type
 
   TOrcamentoF = class(TCadModeloF)
     btnAdicionarItem: TButton;
-    btnCancelar1: TSpeedButton;
-    btnEditar1: TSpeedButton;
-    btnExcluir1: TSpeedButton;
     btnRemoverItem: TButton;
-    btnSalvar1: TSpeedButton;
     edtDataOrc: TDBDateEdit;
     edtDataVal: TDBDateEdit;
-    edtOrcItemId: TDBEdit;
-    edtProdId: TDBEdit;
-    edtProdDesc: TDBEdit;
-    edtQtdProd: TDBEdit;
     edtValorTotalOrc: TDBEdit;
-    edtValorUn: TDBEdit;
-    edtValorTot: TDBEdit;
-    edtCliente1: TDBEdit;
-    edtOrcId1: TDBEdit;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    Label13: TLabel;
-    Label14: TLabel;
-    Label15: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
     lblDescrCli: TDBText;
     edtCliente: TDBEdit;
     dsOrcamentoItem: TDataSource;
@@ -48,12 +27,7 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
-    Panel6: TPanel;
-    Panel7: TPanel;
     SpeedButton1: TSpeedButton;
-    SpeedButton2: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    tsItem: TTabSheet;
     procedure btnAdicionarClick(Sender: TObject);
     procedure btnAdicionarItemClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
@@ -63,7 +37,6 @@ type
     procedure btnRemoverItemClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
-    procedure edtValorUnChange(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormShow(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -135,7 +108,6 @@ begin
     AbreOrcItens(DMF.qryOrcamentoorcamentoid.AsInteger);
   end;
   PageControl1.ActivePage := tsCadastrar;
-
 end;
 
 procedure TOrcamentoF.btnAdicionarItemClick(Sender: TObject);
@@ -223,7 +195,16 @@ end;
 
 procedure TOrcamentoF.btnRemoverItemClick(Sender: TObject);
 begin
-  DMF.qryOrcamentoItem.Delete;
+  if DMF.qryOrcamento.state in [dsInsert, dsEdit] then
+  begin
+    DMF.qryOrcamentoItem.Delete;
+  end
+  else
+  begin
+    DMF.qryOrcamento.edit;
+    DMF.qryOrcamentoItem.Delete;
+    DMF.qryOrcamento.post;
+  end;
   DMF.qryOrcamentovl_total_orcamento.AsString := calcValorOrc();
 end;
 
@@ -246,26 +227,6 @@ begin
   PageControl1.ActivePage := tsCadastrar;
 end;
 
-procedure TOrcamentoF.edtValorUnChange(Sender: TObject);
-begin
-  if DMF.qryOrcamentoItem.State in [dsInsert, dsEdit] then
-  begin
-    if (edtQtdProd.Text <> '') and (edtValorUn.Text <> '') then
-  begin
-    edtValorTot.Field.AsString :=
-      FloatToStr(StrToFloat(edtQtdProd.Text) * StrToFloat(edtValorUn.Text));
-  end
-    else
-    begin
-      DMF.qryOrcamentoItem.Edit;
-      if (edtQtdProd.Text <> '') and (edtValorUn.Text <> '') then
-  begin
-    edtValorTot.Field.AsString :=
-      FloatToStr(StrToFloat(edtQtdProd.Text) * StrToFloat(edtValorUn.Text));
-  end;
-    end;
-  end;
-end;
 
 procedure TOrcamentoF.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
@@ -286,7 +247,7 @@ begin
   BuscaClienteF.ShowModal;
   DMF.qryOrcamentodt_orcamento.AsString := edtDataOrc.Field.AsString;
   DMF.qryOrcamentoclienteid.AsString:=edtCliente.Field.AsString;
-
+  edtCliente.Text := BuscaClienteF.Label2.Caption;
   btnAdicionarItem.Enabled:=True;
 end;
 

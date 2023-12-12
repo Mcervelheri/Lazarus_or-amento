@@ -24,6 +24,7 @@ type
     edtPesquisarID: TEdit;
     edtPesquisarValor: TEdit;
     Label1: TLabel;
+    lblValorProd: TLabel;
     Label5: TLabel;
     Label7: TLabel;
     Label8: TLabel;
@@ -290,6 +291,7 @@ end;
 
 procedure TBucaProdutoF.DBGrid1DblClick(Sender: TObject);
 begin
+  lblValorProd.Caption:=DMF.qryProdutovalor_venda.AsString;
   close;
 end;
 

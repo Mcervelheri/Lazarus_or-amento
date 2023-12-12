@@ -1036,6 +1036,14 @@ object BucaProdutoF: TBucaProdutoF
       ParentFont = False
       TabOrder = 7
     end
+    object lblValorProd: TLabel
+      Left = 79
+      Height = 1
+      Top = 7
+      Width = 1
+      ParentColor = False
+      Visible = False
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0

@@ -1,7 +1,7 @@
 object CadOrcamentoItemF: TCadOrcamentoItemF
-  Left = 927
+  Left = 464
   Height = 394
-  Top = 252
+  Top = 194
   Width = 500
   Caption = 'Orçamento item'
   ClientHeight = 394
@@ -147,8 +147,8 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Height = 23
     Top = 187
     Width = 80
-    DataField = 'valor_venda'
-    DataSource = BucaProdutoF.dsBuscaProduto
+    DataField = 'vl_unitario'
+    DataSource = dsOrcamentoItem
     Alignment = taRightJustify
     Enabled = False
     MaxLength = 0

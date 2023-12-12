@@ -19,6 +19,7 @@ type
     edtPesquisarDesc: TEdit;
     edtPesquisarID: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     Label5: TLabel;
     Panel1: TPanel;
     procedure DBGrid1DblClick(Sender: TObject);
@@ -41,6 +42,7 @@ implementation
 
 procedure TBuscaClienteF.DBGrid1DblClick(Sender: TObject);
 begin
+  Label2.Caption:= DMF.qryClienteid.AsString;;
   close;
 end;
 

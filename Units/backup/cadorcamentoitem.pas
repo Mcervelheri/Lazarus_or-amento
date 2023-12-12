@@ -88,6 +88,7 @@ end;
 procedure TCadOrcamentoItemF.btnCancelarClick(Sender: TObject);
 begin
   DMF.qryOrcamentoItem.Cancel;
+  close;
 end;
 
 procedure TCadOrcamentoItemF.dbEdtQtdProdChange(Sender: TObject);
@@ -105,7 +106,7 @@ end;
 procedure TCadOrcamentoItemF.dbEdtQtdProdExit(Sender: TObject);
 begin
   dbEdtValorTot.Field.AsFloat:=dbEdtQtdProd.Field.AsFloat * dbEdtValorUn.Field.AsFloat;
-  close;
+
 end;
 
 

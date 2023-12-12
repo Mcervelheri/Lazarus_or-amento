@@ -57,6 +57,7 @@ begin
   BucaProdutoF := TBucaProdutoF.Create(self);
   BucaProdutoF.ShowModal;
   edtProdId.Field.AsString := DMF.qryProdutoid.AsString;
+  dbEdtValorUn.Field.Value:=StrToFloat(BucaProdutoF.lblValorProd.Caption);
   DMF.qryCliente.Open;
   dbEdtQtdProd.SetFocus;
 end;
