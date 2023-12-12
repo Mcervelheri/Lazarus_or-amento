@@ -203,7 +203,6 @@ begin
   begin
     DMF.qryOrcamento.edit;
     DMF.qryOrcamentoItem.Delete;
-    DMF.qryOrcamento.post;
   end;
   DMF.qryOrcamentovl_total_orcamento.AsString := calcValorOrc();
 end;

@@ -21,7 +21,6 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TOrcamentoF, OrcamentoF);
   Application.CreateForm(TLoginF, LoginF);
   Application.CreateForm(TDMF, DMF);
   Application.Run;

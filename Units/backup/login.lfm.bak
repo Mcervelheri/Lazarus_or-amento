@@ -723,8 +723,11 @@ object LoginF: TLoginF
       BorderStyle = bsNone
       CharCase = ecUppercase
       Color = 15461355
+      EchoMode = emPassword
       Font.Height = -16
+      OnKeyDown = edtSenhaKeyDown
       ParentFont = False
+      PasswordChar = '*'
       TabOrder = 1
     end
   end

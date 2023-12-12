@@ -22,6 +22,8 @@ type
     btnCancelarLogin: TSpeedButton;
     procedure btnCancelarLoginClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);
+    procedure edtSenhaKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     function ValidaUsuario(pUsusario: String; pSenha: String): Boolean;
   private
@@ -57,6 +59,13 @@ begin
     edtLogin.Text:='';
     edtSenha.Text:='';
   end;
+end;
+
+procedure TLoginF.edtSenhaKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if ord(Key) = 13 then
+  btnLoginClick(Sender);
 end;
 
 function TLoginF.ValidaUsuario(pUsusario: String; pSenha: String): Boolean;

@@ -725,6 +725,7 @@ object LoginF: TLoginF
       Color = 15461355
       EchoMode = emPassword
       Font.Height = -16
+      OnKeyDown = edtSenhaKeyDown
       ParentFont = False
       PasswordChar = '*'
       TabOrder = 1

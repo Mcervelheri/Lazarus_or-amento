@@ -162,6 +162,7 @@
         <Filename Value="Units\relclientes.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="RelClientesF"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="RelClientes"/>
       </Unit>

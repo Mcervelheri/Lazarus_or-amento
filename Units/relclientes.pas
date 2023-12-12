@@ -13,10 +13,10 @@ type
   { TRelClientesF }
 
   TRelClientesF = class(TForm)
-    btnGerarRel: TBitBtn;
     frDBdsClientes: TfrDBDataSet;
     frReport1: TfrReport;
-    procedure btnGerarRelClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -32,12 +32,19 @@ implementation
 
 { TRelClientesF }
 
-procedure TRelClientesF.btnGerarRelClick(Sender: TObject);
+
+procedure TRelClientesF.FormShow(Sender: TObject);
 begin
-     frReport1.LoadFromFile('Relatórios\RelClientes.lrf');
-   frReport1.PrepareReport;
-   frReport1.ShowReport;
+  frReport1.LoadFromFile('Relatórios\RelClientes.lrf');
+  frReport1.PrepareReport;
+  frReport1.ShowReport;
+  close;
+end;
+
+procedure TRelClientesF.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+  CloseAction:=caFree;
 end;
 
 end.
-

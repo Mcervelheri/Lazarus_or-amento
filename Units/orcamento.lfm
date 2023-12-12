@@ -1,7 +1,7 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 144
+  Left = 225
   Height = 507
-  Top = 97
+  Top = 89
   Width = 1111
   Caption = 'Orcamento'
   ClientHeight = 507
@@ -181,9 +181,9 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 1
         end
         object Label4: TLabel[6]
-          Left = 721
+          Left = 369
           Height = 21
-          Top = 8
+          Top = 11
           Width = 87
           Caption = 'Valor Total:'
           Font.CharSet = ANSI_CHARSET
@@ -196,9 +196,9 @@ inherited OrcamentoF: TOrcamentoF
           ParentFont = False
         end
         object btnAdicionarItem: TButton[7]
-          Left = 704
+          Left = 352
           Height = 25
-          Top = 48
+          Top = 51
           Width = 104
           Caption = 'Adicionar item'
           Enabled = False
@@ -206,28 +206,19 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 2
         end
         object btnRemoverItem: TButton[8]
-          Left = 817
+          Left = 465
           Height = 25
-          Top = 48
+          Top = 51
           Width = 104
           Caption = 'Remover item'
           Enabled = False
           OnClick = btnRemoverItemClick
           TabOrder = 3
         end
-        object lblDescrCli: TDBText[9]
-          Left = 208
-          Height = 15
-          Top = 40
-          Width = 69
-          DataField = 'nome'
-          DataSource = BuscaClienteF.dsBuscaCliente
-          ParentColor = False
-        end
-        object edtDataOrc: TDBDateEdit[10]
-          Left = 592
+        object edtDataOrc: TDBDateEdit[9]
+          Left = 240
           Height = 23
-          Top = 5
+          Top = 8
           Width = 103
           CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
           DateOrder = doNone
@@ -239,10 +230,10 @@ inherited OrcamentoF: TOrcamentoF
           DataField = 'dt_orcamento'
           DataSource = dsModelo
         end
-        object edtDataVal: TDBDateEdit[11]
-          Left = 592
+        object edtDataVal: TDBDateEdit[10]
+          Left = 240
           Height = 23
-          Top = 37
+          Top = 40
           Width = 103
           CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
           DateOrder = doNone
@@ -254,10 +245,10 @@ inherited OrcamentoF: TOrcamentoF
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
-        object edtValorTotalOrc: TDBEdit[12]
-          Left = 824
+        object edtValorTotalOrc: TDBEdit[11]
+          Left = 472
           Height = 23
-          Top = 8
+          Top = 11
           Width = 80
           DataField = 'vl_total_orcamento'
           DataSource = dsModelo

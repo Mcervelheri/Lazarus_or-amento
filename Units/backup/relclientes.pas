@@ -13,10 +13,9 @@ type
   { TRelClientesF }
 
   TRelClientesF = class(TForm)
-    btnGerarRel: TBitBtn;
     frDBdsClientes: TfrDBDataSet;
     frReport1: TfrReport;
-    procedure btnGerarRelClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -32,9 +31,10 @@ implementation
 
 { TRelClientesF }
 
-procedure TRelClientesF.btnGerarRelClick(Sender: TObject);
+
+procedure TRelClientesF.FormShow(Sender: TObject);
 begin
-     frReport1.LoadFromFile('Relatórios\RelClientes.lrf');
+        frReport1.LoadFromFile('Relatórios\RelClientes.lrf');
    frReport1.PrepareReport;
    frReport1.ShowReport;
 end;
