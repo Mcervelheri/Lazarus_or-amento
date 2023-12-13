@@ -17,7 +17,7 @@ type
     edtUsuario: TDBEdit;
     edtNome: TDBEdit;
     edtSenha: TDBEdit;
-    DBText1: TDBText;
+    txtId: TDBText;
     edtPesquisarUser: TEdit;
     Label3: TLabel;
     Label4: TLabel;
@@ -25,6 +25,8 @@ type
     Label6: TLabel;
     Label7: TLabel;
     procedure btnAdicionarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnPesquisaClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
@@ -120,6 +122,21 @@ begin
   PageControl1.ActivePage := tsCadastrar;
   DMF.qryUsuario.Insert;
   edtUsuario.SetFocus;
+end;
+
+procedure TCadUsuarioF.btnCancelarClick(Sender: TObject);
+begin
+  DMF.qryUsuario.Cancel;
+  PageControl1.ActivePage:=tsConsulta;
+end;
+
+procedure TCadUsuarioF.btnExcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Você tem certeza que deseja excluir o registro '+txtId.Field.AsString+' ?',
+    mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    DMF.qryUsuario.Delete;
+  end;
 end;
 
 procedure TCadUsuarioF.btnFecharClick(Sender: TObject);

@@ -140,7 +140,6 @@ begin
     condicao := 'where produtoid = ' + edtPesquisarID.Text + ' order by produtoid desc';
     select := select + ' ' + condicao;
     DMF.qryProduto.SQL.Text := select;
-    ShowMessage('condição id');
 
   end
   else if pesqDesc then
@@ -319,7 +318,6 @@ begin
         QuotedStr(DateToStr(dtFim.Date));
       select := select + ' ' + condicao;
       DMF.qryProduto.SQL.Text := select;
-      ShowMessage(DMF.qryProduto.SQL.Text);
     end
     else
     begin
@@ -341,7 +339,6 @@ begin
   end;
   DMF.qryProduto.Open;
   sbLimparTudo.click;
-  ShowMessage(DMF.qryProduto.SQL.Text);
 end;
 
 procedure TCadProdutoF.btnSalvarClick(Sender: TObject);
@@ -379,10 +376,10 @@ end;
 
 procedure TCadProdutoF.btnExcluirClick(Sender: TObject);
 begin
-  if MessageDlg('Você tem certeza que deseja excluir o registro?',
+  if MessageDlg('Você tem certeza que deseja excluir o registro '+txtID.Field.AsString+'?',
     mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    DMF.qryCategoria.Delete;
+    DMF.qryProduto.Delete;
   end;
 end;
 

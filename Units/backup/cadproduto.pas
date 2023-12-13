@@ -140,7 +140,6 @@ begin
     condicao := 'where produtoid = ' + edtPesquisarID.Text + ' order by produtoid desc';
     select := select + ' ' + condicao;
     DMF.qryProduto.SQL.Text := select;
-    ShowMessage('condição id');
 
   end
   else if pesqDesc then
@@ -319,7 +318,6 @@ begin
         QuotedStr(DateToStr(dtFim.Date));
       select := select + ' ' + condicao;
       DMF.qryProduto.SQL.Text := select;
-      ShowMessage(DMF.qryProduto.SQL.Text);
     end
     else
     begin
@@ -341,7 +339,6 @@ begin
   end;
   DMF.qryProduto.Open;
   sbLimparTudo.click;
-  ShowMessage(DMF.qryProduto.SQL.Text);
 end;
 
 procedure TCadProdutoF.btnSalvarClick(Sender: TObject);

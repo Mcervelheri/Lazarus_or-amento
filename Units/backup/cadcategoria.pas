@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, DBCtrls,
-  Buttons, CadModelo, DM, DB;
+  Buttons, Menus, CadModelo, DM, DB;
 
 type
 
@@ -107,6 +107,7 @@ end;
 procedure TCadCategoriaF.DBGrid1DblClick(Sender: TObject);
 begin
   PageControl1.ActivePage := tsCadastrar;
+  btnSalvar.Enabled:=False;
 end;
 
 procedure TCadCategoriaF.edtDescKeyDown(Sender: TObject; var Key: word;
@@ -128,7 +129,7 @@ end;
 procedure TCadCategoriaF.btnExcluirClick(Sender: TObject);
 begin
 
-  if MessageDlg('Você tem certeza que deseja excluir o registro?',
+  if MessageDlg('Você tem certeza que deseja excluir o registro '+txtID.Field.AsString+ ' ?',
     mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     DMF.qryCategoria.Delete;
@@ -144,7 +145,7 @@ end;
 procedure TCadCategoriaF.btnEditarClick(Sender: TObject);
 begin
   DMF.qryCategoria.Edit;
-  PageControl1.ActivePage := tsConsulta;
+  btnSalvar.Enabled:=True;
 end;
 
 procedure TCadCategoriaF.btnFecharClick(Sender: TObject);

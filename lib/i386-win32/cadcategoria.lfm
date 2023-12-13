@@ -1,12 +1,11 @@
 inherited CadCategoriaF: TCadCategoriaF
-  Left = 1043
+  Left = 324
   Height = 500
-  Top = 311
+  Top = 142
   Width = 639
   Caption = 'Cadastro de Categoria'
   ClientHeight = 500
   ClientWidth = 639
-  Menu = nil
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -22,6 +21,7 @@ inherited CadCategoriaF: TCadCategoriaF
         Width = 631
         ClientWidth = 631
         inherited edtPesquisarID: TEdit
+          Font.Style = [fsBold]
           NumbersOnly = True
         end
         inherited btnPesquisa: TSpeedButton
@@ -33,11 +33,13 @@ inherited CadCategoriaF: TCadCategoriaF
           Top = 24
           Width = 264
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
           Font.Height = -16
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          Font.Style = [fsBold]
           ParentBidiMode = False
           ParentFont = False
           TabOrder = 1
@@ -76,18 +78,18 @@ inherited CadCategoriaF: TCadCategoriaF
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'id'
+            Title.Caption = 'ID'
             Width = 40
             FieldName = 'id'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'descrição'
+            Title.Caption = 'Descrição'
             FieldName = 'descrição'
           end>
         Flat = True
         Font.CharSet = ANSI_CHARSET
-        Font.Color = 14120960
+        Font.Color = 4915330
         Font.Height = -16
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
@@ -139,7 +141,7 @@ inherited CadCategoriaF: TCadCategoriaF
           Width = 27
           Caption = 'ID:'
           Font.CharSet = ANSI_CHARSET
-          Font.Color = clMenuHighlight
+          Font.Color = 14120960
           Font.Height = -20
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
@@ -154,7 +156,7 @@ inherited CadCategoriaF: TCadCategoriaF
           Width = 96
           Caption = 'Descrição:'
           Font.CharSet = ANSI_CHARSET
-          Font.Color = clMenuHighlight
+          Font.Color = 14120960
           Font.Height = -20
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
@@ -170,8 +172,10 @@ inherited CadCategoriaF: TCadCategoriaF
           DataField = 'descrição'
           DataSource = dsModelo
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 50
@@ -183,10 +187,14 @@ inherited CadCategoriaF: TCadCategoriaF
           Left = 160
           Height = 28
           Top = 40
-          Width = 24
+          Width = 25
           DataField = 'id'
           DataSource = dsModelo
+          Font.Color = 4915330
+          Font.Height = -20
+          Font.Style = [fsBold, fsItalic]
           ParentColor = False
+          ParentFont = False
         end
       end
     end

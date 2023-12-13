@@ -23,7 +23,6 @@ type
     miRelCategoria: TMenuItem;
     miRelatorios: TMenuItem;
     miSobre: TMenuItem;
-    miInicio: TMenuItem;
     miOrcamento: TMenuItem;
     miManutencao: TMenuItem;
     miSair: TMenuItem;

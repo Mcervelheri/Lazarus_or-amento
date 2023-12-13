@@ -325,6 +325,7 @@ object DMF: TDMF
   end
   object qryOrcamentoItem: TZQuery
     Connection = ZConnection1
+    Active = True
     SQL.Strings = (
       'select orcamentoid, orcamentoitemid, produtoid, qt_produto, vl_unitario, vl_total from orcamento_item order by orcamentoid desc'
     )

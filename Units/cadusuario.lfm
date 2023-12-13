@@ -1,11 +1,13 @@
 inherited CadUsuarioF: TCadUsuarioF
-  Left = 536
-  Top = 278
+  Left = 376
+  Top = 114
   Caption = 'Cadastro Usuário'
-  ClientHeight = 496
   inherited PageControl1: TPageControl
     inherited tsConsulta: TTabSheet
       inherited Panel1: TPanel
+        inherited edtPesquisarID: TEdit
+          Font.Style = [fsBold]
+        end
         inherited btnPesquisa: TSpeedButton
           OnClick = btnPesquisaClick
         end
@@ -30,11 +32,13 @@ inherited CadUsuarioF: TCadUsuarioF
           Top = 24
           Width = 224
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
           Font.Height = -16
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          Font.Style = [fsBold]
           ParentBidiMode = False
           ParentFont = False
           TabOrder = 1
@@ -53,21 +57,25 @@ inherited CadUsuarioF: TCadUsuarioF
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'id'
+            Title.Caption = 'ID'
             Width = 30
             FieldName = 'id'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'usuario'
+            Title.Caption = 'Usuário'
             FieldName = 'usuario'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'nome'
+            Title.Caption = 'Nome'
             FieldName = 'nome'
           end>
         Flat = True
+        Font.Color = 4915330
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentFont = False
         OnDblClick = DBGrid1DblClick
       end
     end
@@ -75,6 +83,14 @@ inherited CadUsuarioF: TCadUsuarioF
       inherited Panel3: TPanel
         inherited btnSalvar: TSpeedButton
           OnClick = btnSalvarClick
+        end
+        inherited btnCancelar: TSpeedButton
+          Top = 368
+          Anchors = [akLeft, akBottom]
+          OnClick = btnCancelarClick
+        end
+        inherited btnExcluir: TSpeedButton
+          OnClick = btnExcluirClick
         end
       end
       inherited Panel4: TPanel
@@ -151,20 +167,23 @@ inherited CadUsuarioF: TCadUsuarioF
           DataField = 'usuario'
           DataSource = dsModelo
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Color = 15461355
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 30
           ParentFont = False
           TabOrder = 0
         end
-        object DBText1: TDBText[5]
+        object txtId: TDBText[5]
           Left = 160
           Height = 28
           Top = 40
-          Width = 12
+          Width = 14
           DataField = 'id'
           DataSource = dsModelo
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           ParentColor = False
@@ -179,6 +198,7 @@ inherited CadUsuarioF: TCadUsuarioF
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 60
@@ -194,6 +214,7 @@ inherited CadUsuarioF: TCadUsuarioF
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 50

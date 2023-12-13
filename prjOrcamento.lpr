@@ -21,9 +21,9 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
+  Application.CreateForm(TTelaInicialF, TelaInicialF);
   Application.CreateForm(TLoginF, LoginF);
   Application.CreateForm(TDMF, DMF);
-  Application.CreateForm(TRelOrcItensF, RelOrcItensF);
   Application.Run;
 end.
 

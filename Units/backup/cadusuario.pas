@@ -25,6 +25,7 @@ type
     Label6: TLabel;
     Label7: TLabel;
     procedure btnAdicionarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnPesquisaClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
@@ -120,6 +121,12 @@ begin
   PageControl1.ActivePage := tsCadastrar;
   DMF.qryUsuario.Insert;
   edtUsuario.SetFocus;
+end;
+
+procedure TCadUsuarioF.btnCancelarClick(Sender: TObject);
+begin
+  DMF.qryUsuario.Cancel;
+  PageControl1.ActivePage:=tsConsulta;
 end;
 
 procedure TCadUsuarioF.btnFecharClick(Sender: TObject);

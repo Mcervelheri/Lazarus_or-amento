@@ -42,7 +42,7 @@ implementation
 
 procedure TBuscaClienteF.DBGrid1DblClick(Sender: TObject);
 begin
-  Label2.Caption:= DMF.qryClienteclienteid.AsString;;
+  Label2.Caption:= DMF.qryClienteid.AsString;;
   close;
 end;
 

@@ -106,7 +106,7 @@ end;
 
 procedure TDMF.qryUsuarioAfterInsert(DataSet: TDataSet);
 begin
-  qryUsuarioid.AsInteger:= StrToInt(getSequence('usuario'));
+  qryUsuarioid.AsInteger:= StrToInt(getSequence('usuarios_id'));
 end;
 
 

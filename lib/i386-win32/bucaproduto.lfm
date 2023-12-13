@@ -1,22 +1,23 @@
 object BucaProdutoF: TBucaProdutoF
-  Left = 229
+  Left = 296
   Height = 441
-  Top = 190
-  Width = 824
+  Top = 164
+  Width = 884
   Caption = 'Busca Produto'
   ClientHeight = 441
-  ClientWidth = 824
+  ClientWidth = 884
   OnClose = FormClose
+  Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 80
     Top = 0
-    Width = 824
+    Width = 884
     Align = alTop
     BevelColor = clSilver
     ClientHeight = 80
-    ClientWidth = 824
+    ClientWidth = 884
     Color = clSilver
     ParentColor = False
     TabOrder = 0
@@ -1049,7 +1050,7 @@ object BucaProdutoF: TBucaProdutoF
     Left = 0
     Height = 361
     Top = 80
-    Width = 824
+    Width = 884
     Align = alClient
     AlternateColor = clSilver
     AutoEdit = False
@@ -1057,38 +1058,48 @@ object BucaProdutoF: TBucaProdutoF
     Color = 14211288
     Columns = <    
       item
-        Title.Caption = 'id'
+        Title.Caption = 'ID'
+        Width = 30
         FieldName = 'id'
       end    
       item
         Title.Caption = 'categoria'
+        Width = 65
         FieldName = 'categoria'
       end    
       item
-        Title.Caption = 'descricao'
+        Title.Caption = 'Descrição do produto'
         Width = 200
         FieldName = 'descricao'
       end    
       item
-        Title.Caption = 'valor_venda'
+        Title.Caption = 'Valor de venda'
+        Width = 100
         FieldName = 'valor_venda'
       end    
       item
-        Title.Caption = 'data_cadastro'
+        Title.Caption = 'Data cadastro'
+        Width = 95
         FieldName = 'data_cadastro'
       end    
       item
-        Title.Caption = 'status'
+        Title.Caption = 'Status'
+        Width = 60
         FieldName = 'status'
       end    
       item
-        Title.Caption = 'observacao'
+        Title.Caption = 'Observação'
+        Width = 310
         FieldName = 'observacao'
       end>
     DataSource = dsBuscaProduto
     FixedColor = 14211288
     FixedHotColor = clNone
     Flat = True
+    Font.Color = 4915330
+    Font.Height = -13
+    Font.Style = [fsBold]
+    ParentFont = False
     Scrollbars = ssAutoBoth
     TabOrder = 1
     OnDblClick = DBGrid1DblClick

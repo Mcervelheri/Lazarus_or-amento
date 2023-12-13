@@ -1,7 +1,7 @@
 inherited CadProdutoF: TCadProdutoF
-  Left = 437
+  Left = 279
   Height = 533
-  Top = 150
+  Top = 102
   Width = 1001
   Caption = 'Tela modelo de produto'
   ClientHeight = 533
@@ -11,6 +11,8 @@ inherited CadProdutoF: TCadProdutoF
   inherited PageControl1: TPageControl
     Height = 533
     Width = 1001
+    ActivePage = tsConsulta
+    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 525
       ClientWidth = 993
@@ -20,6 +22,7 @@ inherited CadProdutoF: TCadProdutoF
         inherited edtPesquisarID: TEdit
           Left = 152
           Top = 16
+          Font.Style = [fsBold]
           NumbersOnly = True
         end
         inherited Label1: TLabel
@@ -50,11 +53,13 @@ inherited CadProdutoF: TCadProdutoF
           Top = 48
           Width = 264
           BorderStyle = bsNone
+          CharCase = ecUppercase
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
           Font.Height = -16
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
+          Font.Style = [fsBold]
           ParentBidiMode = False
           ParentFont = False
           TabOrder = 1
@@ -268,6 +273,7 @@ inherited CadProdutoF: TCadProdutoF
             Font.Height = -16
             Font.Pitch = fpVariable
             Font.Quality = fqDraft
+            Font.Style = [fsBold]
             NumbersOnly = True
             ParentBidiMode = False
             ParentFont = False
@@ -1036,40 +1042,48 @@ inherited CadProdutoF: TCadProdutoF
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'id'
+            Title.Caption = 'ID'
+            Width = 60
             FieldName = 'id'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'categoria'
+            Title.Caption = 'Categoria'
+            Width = 80
             FieldName = 'categoria'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'descricao'
+            Title.Caption = 'Descrição'
+            Width = 300
             FieldName = 'descricao'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'valor_venda'
+            Title.Caption = 'Valor de venda'
             FieldName = 'valor_venda'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'data_cadastro'
+            Title.Caption = 'Data do Cadastro'
             FieldName = 'data_cadastro'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'status'
+            Title.Caption = 'Status'
             FieldName = 'status'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'observacao'
+            Title.Caption = 'Observação'
+            Width = 300
             FieldName = 'observacao'
           end>
         Flat = True
+        Font.Color = 4915330
+        Font.Height = -16
+        Font.Style = [fsBold]
+        ParentFont = False
         OnDblClick = DBGrid1DblClick
       end
     end
@@ -1083,6 +1097,7 @@ inherited CadProdutoF: TCadProdutoF
           OnClick = btnSalvarClick
         end
         inherited btnCancelar: TSpeedButton
+          Top = 384
           Anchors = [akLeft, akBottom]
           OnClick = btnCancelarClick
         end
@@ -1118,7 +1133,7 @@ inherited CadProdutoF: TCadProdutoF
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
-          MaxLength = 0
+          MaxLength = 50
           ParentFont = False
           TabOrder = 0
         end
@@ -1156,7 +1171,7 @@ inherited CadProdutoF: TCadProdutoF
           Left = 164
           Height = 28
           Top = 40
-          Width = 48
+          Width = 24
           DataField = 'id'
           DataSource = dsModelo
           Font.Height = -20
@@ -1349,7 +1364,7 @@ inherited CadProdutoF: TCadProdutoF
     Left = 24
   end
   object dsCategoria: TDataSource[2]
-    Left = 64
-    Top = 368
+    Left = 24
+    Top = 432
   end
 end

@@ -1,11 +1,8 @@
 inherited CadUsuarioF: TCadUsuarioF
-  Left = 536
-  Top = 278
+  Left = 376
+  Top = 114
   Caption = 'Cadastro Usuário'
-  ClientHeight = 496
   inherited PageControl1: TPageControl
-    ActivePage = tsConsulta
-    TabIndex = 0
     inherited tsConsulta: TTabSheet
       inherited Panel1: TPanel
         inherited btnPesquisa: TSpeedButton
@@ -77,6 +74,11 @@ inherited CadUsuarioF: TCadUsuarioF
       inherited Panel3: TPanel
         inherited btnSalvar: TSpeedButton
           OnClick = btnSalvarClick
+        end
+        inherited btnCancelar: TSpeedButton
+          Top = 368
+          Anchors = [akLeft, akBottom]
+          OnClick = btnCancelarClick
         end
       end
       inherited Panel4: TPanel
