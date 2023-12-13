@@ -137,7 +137,7 @@
       <Unit>
         <Filename Value="Units\bucaproduto.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="BucaProdutoF"/>
+        <ComponentName Value="BuscaProdutoF"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BucaProduto"/>

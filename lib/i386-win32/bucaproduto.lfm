@@ -1,4 +1,4 @@
-object BucaProdutoF: TBucaProdutoF
+object BuscaProdutoF: TBuscaProdutoF
   Left = 296
   Height = 441
   Top = 164

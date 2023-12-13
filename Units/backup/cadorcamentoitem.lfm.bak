@@ -20,7 +20,9 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     BorderStyle = bsNone
     Color = 14211288
     Enabled = False
+    Font.Color = 4915330
     Font.Height = -16
+    Font.Style = [fsBold]
     MaxLength = 0
     ParentFont = False
     TabOrder = 0
@@ -118,7 +120,9 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     BorderStyle = bsNone
     Color = 14211288
     Enabled = False
+    Font.Color = 4915330
     Font.Height = -16
+    Font.Style = [fsBold]
     MaxLength = 50
     ParentFont = False
     TabOrder = 1
@@ -133,7 +137,9 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Alignment = taRightJustify
     BorderStyle = bsNone
     Color = 14211288
+    Font.Color = 4915330
     Font.Height = -16
+    Font.Style = [fsBold]
     MaxLength = 0
     ParentFont = False
     TabOrder = 2
@@ -152,7 +158,9 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     BorderStyle = bsNone
     Color = 14211288
     Enabled = False
+    Font.Color = 4915330
     Font.Height = -16
+    Font.Style = [fsBold]
     MaxLength = 0
     ParentFont = False
     TabOrder = 3
@@ -168,7 +176,9 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     BorderStyle = bsNone
     Color = 14211288
     Enabled = False
+    Font.Color = 4915330
     Font.Height = -16
+    Font.Style = [fsBold]
     MaxLength = 0
     ParentFont = False
     TabOrder = 4

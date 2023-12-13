@@ -1,7 +1,7 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 198
+  Left = 329
   Height = 775
-  Top = 201
+  Top = 202
   Width = 1307
   Caption = 'Orcamento'
   ClientHeight = 775
@@ -12,8 +12,6 @@ inherited OrcamentoF: TOrcamentoF
   inherited PageControl1: TPageControl
     Height = 775
     Width = 1307
-    ActivePage = tsConsulta
-    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 767
       ClientWidth = 1299
@@ -43,8 +41,7 @@ inherited OrcamentoF: TOrcamentoF
       inherited DBGrid1: TDBGrid
         Height = 687
         Width = 1235
-        AlternateColor = 14211288
-        Color = clSilver
+        AlternateColor = clSilver
         Columns = <        
           item
             PickList.Strings = (            )
@@ -73,6 +70,7 @@ inherited OrcamentoF: TOrcamentoF
             Title.Caption = 'Valor do orçamento'
             FieldName = 'vl_total_orcamento'
           end>
+        FixedColor = clSilver
         Flat = True
         Font.Color = 4915330
         Font.Height = -16
@@ -302,10 +300,10 @@ inherited OrcamentoF: TOrcamentoF
           Top = 1
           Width = 1233
           Align = alClient
-          AlternateColor = 14211288
+          AlternateColor = clSilver
           AutoEdit = False
           BorderStyle = bsNone
-          Color = clSilver
+          Color = 14211288
           Columns = <          
             item
               Title.Caption = 'Orc ID'

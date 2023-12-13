@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TBucaProdutoF }
+  { TBuscaProdutoF }
 
-  TBucaProdutoF = class(TForm)
+  TBuscaProdutoF = class(TForm)
     btnLimparData: TBitBtn;
     btnPesqData: TButton;
     btnPesquisa: TSpeedButton;
@@ -46,15 +46,15 @@ type
   end;
 
 var
-  BucaProdutoF: TBucaProdutoF;
+  BuscaProdutoF: TBuscaProdutoF;
   pesqID, pesqDesc, pesqStatus, pesqValor, pesqData: boolean;
 implementation
 
 {$R *.lfm}
 
-{ TBucaProdutoF }
+{ TBuscaProdutoF }
 
-procedure TBucaProdutoF.btnPesquisaClick(Sender: TObject);
+procedure TBuscaProdutoF.btnPesquisaClick(Sender: TObject);
 var
   select, condicao, coluna, operador: string;
 begin
@@ -289,19 +289,19 @@ begin
   ShowMessage(DMF.qryProduto.SQL.Text);
 end;
 
-procedure TBucaProdutoF.DBGrid1DblClick(Sender: TObject);
+procedure TBuscaProdutoF.DBGrid1DblClick(Sender: TObject);
 begin
   lblValorProd.Caption:=DMF.qryProdutovalor_venda.AsString;
   close;
 end;
 
-procedure TBucaProdutoF.FormClose(Sender: TObject; var CloseAction: TCloseAction
+procedure TBuscaProdutoF.FormClose(Sender: TObject; var CloseAction: TCloseAction
   );
 begin
 
 end;
 
-procedure TBucaProdutoF.btnLimparDataClick(Sender: TObject);
+procedure TBuscaProdutoF.btnLimparDataClick(Sender: TObject);
 begin
     dtFim.MaxDate := Date;
   dtFim.Date := Date;
@@ -315,7 +315,7 @@ begin
   pesqData := False;
 end;
 
-procedure TBucaProdutoF.btnPesqDataClick(Sender: TObject);
+procedure TBuscaProdutoF.btnPesqDataClick(Sender: TObject);
 begin
     btnPesqData.Visible := False;
   Label7.Visible := True;

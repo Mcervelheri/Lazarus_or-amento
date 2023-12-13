@@ -142,9 +142,13 @@ begin
     DMF.qryProduto.SQL.Text := select;
 
   end
-  else if pesqDesc and pesqStatus and pesqValor and pesqData then
+  else if pesqDesc then
   begin
-    if rgPesquisaValorVenda.ItemIndex = 0 then
+    if pesqStatus then
+    begin
+      if pesqValor then
+      begin
+        if rgPesquisaValorVenda.ItemIndex = 0 then
         begin
           operador := '>';
         end
@@ -156,7 +160,10 @@ begin
         begin
           operador := '=';
         end;
-    condicao := 'where Upper(ds_produto) like ' + QuotedStr(
+        if pesqData then
+        begin
+
+          condicao := 'where Upper(ds_produto) like ' + QuotedStr(
             '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
             ' and status_produto = ' + QuotedStr(
             rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
@@ -165,9 +172,8 @@ begin
             ' and ' + QuotedStr(DateToStr(dtFim.Date)) + ' order by ds_produto asc';
           select := select + ' ' + condicao;
           DMF.qryProduto.SQL.Text := select;
-
-  end
-  else if pesqDesc and pesqStatus and pesqValor then
+        end
+        else
         begin
           condicao := 'where Upper(ds_produto) like ' + QuotedStr(
             '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
@@ -177,8 +183,10 @@ begin
             ' order by ds_produto asc';
           select := select + ' ' + condicao;
           DMF.qryProduto.SQL.Text := select;
-        end
-      else if pesqDesc and pesqStatus then
+        end;
+      end
+      else
+
       begin
         condicao := 'where Upper(ds_produto) like ' + QuotedStr(
           '%' + UpperCase(edtPesquisarDesc.Text) + '%') +

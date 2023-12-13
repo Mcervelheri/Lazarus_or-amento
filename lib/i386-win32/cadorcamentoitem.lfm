@@ -116,7 +116,7 @@ object CadOrcamentoItemF: TCadOrcamentoItemF
     Top = 91
     Width = 176
     DataField = 'descricao'
-    DataSource = BucaProdutoF.dsBuscaProduto
+    DataSource = BuscaProdutoF.dsBuscaProduto
     BorderStyle = bsNone
     Color = 14211288
     Enabled = False
