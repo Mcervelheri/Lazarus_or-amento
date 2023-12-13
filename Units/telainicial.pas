@@ -6,14 +6,15 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, EditBtn,
-  CadCategoria, CadProduto, CadCliente, CadUsuario, Orcamento, RelCategoria,
-  RelProdutos, RelClientes, RelOrcamento, RelOrcItens;
+  ExtCtrls, CadCategoria, CadProduto, CadCliente, CadUsuario, Orcamento,
+  RelCategoria, RelProdutos, RelClientes, RelOrcamento, RelOrcItens;
 
 type
 
   { TTelaInicialF }
 
   TTelaInicialF = class(TForm)
+    Image1: TImage;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     miOrcamentoItem: TMenuItem;

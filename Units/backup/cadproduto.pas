@@ -117,7 +117,7 @@ begin
   select := 'select ' + 'produtoid as id, ' + 'categoriaprodutoid as categoria, ' +
     'ds_produto as descricao, ' + 'obs_produto as observacao, ' +
     'vl_venda_produto as valor_venda, ' + 'dt_cadastro_produto as data_cadastro, ' +
-    'status_produto as status ' + 'from produto';
+    'status_produto as status ' + 'from produto ';
   if edtPesquisarID.Text <> '' then
   begin
     pesqID := True;
@@ -335,7 +335,7 @@ begin
   end
   else
   begin
-    DMF.qryProduto.SQL.Text := select;
+    DMF.qryProduto.SQL.Text := select + ' order by id desc';
   end;
   DMF.qryProduto.Open;
   sbLimparTudo.click;
@@ -344,19 +344,26 @@ end;
 procedure TCadProdutoF.btnSalvarClick(Sender: TObject);
 begin
   DMF.qryProduto.FieldByName('categoria').AsInteger :=
-    DMF.qryCategoria.FieldByName('id').AsInteger;
+    DMF.qryCategoria.FieldByName('categoriaprodutoid').AsInteger;
   DMF.qryProduto.Post;
   PageControl1.ActivePage := tsConsulta;
 end;
 
 procedure TCadProdutoF.DBGrid1DblClick(Sender: TObject);
 begin
+  edtDesc.Enabled:=False;
+  lcbCategoria.Enabled:=False;
+  cbStatus.Enabled:=False;
+  edtValor.Enabled:=False;
+  edtObs.Enabled:=False;
+  dtCadastro.Enabled:=False;
+  btnSalvar.Enabled:=False;
   PageControl1.ActivePage := tsCadastrar;
 end;
 
 procedure TCadProdutoF.btnAdicionarClick(Sender: TObject);
 begin
-  PageControl1.ActivePage:=tsCadastrar;
+  PageControl1.ActivePage := tsCadastrar;
   DMF.qryProduto.Insert;
   DMF.qryProduto.FieldByName('data_cadastro').AsDateTime := Date;
   edtDesc.SetFocus;
@@ -371,15 +378,21 @@ end;
 procedure TCadProdutoF.btnEditarClick(Sender: TObject);
 begin
   DMF.qryCategoria.Edit;
-  PageControl1.ActivePage := tsConsulta;
+  edtDesc.Enabled:=True;
+  lcbCategoria.Enabled:=True;
+  cbStatus.Enabled:=True;
+  edtValor.Enabled:=True;
+  edtObs.Enabled:=True;
+  dtCadastro.Enabled:=True;
+  btnSalvar.Enabled:=True;
 end;
 
 procedure TCadProdutoF.btnExcluirClick(Sender: TObject);
 begin
-  if MessageDlg('Você tem certeza que deseja excluir o registro?',
-    mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  if MessageDlg('Você tem certeza que deseja excluir o registro ' +
+    txtID.Field.AsString + '?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    DMF.qryCategoria.Delete;
+    DMF.qryProduto.Delete;
   end;
 end;
 

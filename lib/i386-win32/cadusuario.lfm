@@ -92,6 +92,9 @@ inherited CadUsuarioF: TCadUsuarioF
         inherited btnExcluir: TSpeedButton
           OnClick = btnExcluirClick
         end
+        inherited btnEditar: TSpeedButton
+          OnClick = btnEditarClick
+        end
       end
       inherited Panel4: TPanel
         inherited Label2: TLabel

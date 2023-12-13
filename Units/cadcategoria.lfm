@@ -1,7 +1,7 @@
 inherited CadCategoriaF: TCadCategoriaF
-  Left = 324
+  Left = 539
   Height = 500
-  Top = 142
+  Top = 164
   Width = 639
   Caption = 'Cadastro de Categoria'
   ClientHeight = 500
@@ -12,8 +12,6 @@ inherited CadCategoriaF: TCadCategoriaF
   inherited PageControl1: TPageControl
     Height = 500
     Width = 639
-    ActivePage = tsConsulta
-    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 492
       ClientWidth = 631
@@ -79,13 +77,12 @@ inherited CadCategoriaF: TCadCategoriaF
           item
             PickList.Strings = (            )
             Title.Caption = 'ID'
-            Width = 40
-            FieldName = 'id'
+            FieldName = 'categoriaprodutoid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Descrição'
-            FieldName = 'descrição'
+            Title.Caption = 'Nome da categoria'
+            FieldName = 'ds_categoria_produto'
           end>
         Flat = True
         Font.CharSet = ANSI_CHARSET
@@ -169,7 +166,7 @@ inherited CadCategoriaF: TCadCategoriaF
           Height = 28
           Top = 88
           Width = 364
-          DataField = 'descrição'
+          DataField = 'ds_categoria_produto'
           DataSource = dsModelo
           BorderStyle = bsNone
           CharCase = ecUppercase
@@ -187,8 +184,8 @@ inherited CadCategoriaF: TCadCategoriaF
           Left = 160
           Height = 28
           Top = 40
-          Width = 25
-          DataField = 'id'
+          Width = 24
+          DataField = 'categoriaprodutoid'
           DataSource = dsModelo
           Font.Color = 4915330
           Font.Height = -20
@@ -201,7 +198,7 @@ inherited CadCategoriaF: TCadCategoriaF
   end
   inherited dsModelo: TDataSource
     DataSet = DMF.qryCategoria
-    Left = 432
-    Top = 32
+    Left = 32
+    Top = 168
   end
 end

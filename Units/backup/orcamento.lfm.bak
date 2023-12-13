@@ -12,6 +12,8 @@ inherited OrcamentoF: TOrcamentoF
   inherited PageControl1: TPageControl
     Height = 507
     Width = 1111
+    ActivePage = tsConsulta
+    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 499
       ClientWidth = 1103
@@ -20,6 +22,8 @@ inherited OrcamentoF: TOrcamentoF
         ClientWidth = 1103
         inherited edtPesquisarID: TEdit
           Left = 112
+          Font.Color = 4915330
+          Font.Style = [fsBold]
         end
         inherited Label1: TLabel
           Left = 88
@@ -43,31 +47,35 @@ inherited OrcamentoF: TOrcamentoF
         Columns = <        
           item
             PickList.Strings = (            )
-            Title.Caption = 'orcamentoid'
+            Title.Caption = 'Orc ID'
+            Width = 60
             FieldName = 'orcamentoid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'clienteid'
+            Title.Caption = 'Cliente ID'
+            Width = 90
             FieldName = 'clienteid'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'dt_orcamento'
+            Title.Caption = 'Data do orçamento'
             FieldName = 'dt_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'dt_validade_orcamento'
+            Title.Caption = 'Data de val. do orçamento'
             FieldName = 'dt_validade_orcamento'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'vl_total_orcamento'
+            Title.Caption = 'Valor do orçamento'
             FieldName = 'vl_total_orcamento'
           end>
         Flat = True
-        Font.Style = [fsBold, fsItalic]
+        Font.Color = 4915330
+        Font.Height = -16
+        Font.Style = [fsBold]
         ParentFont = False
         OnDblClick = DBGrid1DblClick
       end
@@ -143,6 +151,7 @@ inherited OrcamentoF: TOrcamentoF
           Alignment = taRightJustify
           BorderStyle = bsNone
           Color = 14211288
+          Font.Color = 4915330
           Font.Height = -16
           Font.Style = [fsBold]
           MaxLength = 0
@@ -168,6 +177,7 @@ inherited OrcamentoF: TOrcamentoF
           Alignment = taRightJustify
           BorderStyle = bsNone
           Color = 14211288
+          Font.Color = 4915330
           Font.Height = -16
           Font.Style = [fsBold]
           MaxLength = 0
@@ -218,8 +228,12 @@ inherited OrcamentoF: TOrcamentoF
           DateOrder = doNone
           ButtonWidth = 23
           NumGlyphs = 1
+          Font.Color = 4915330
+          Font.Style = [fsBold]
           MaxLength = 0
+          ParentFont = False
           TabOrder = 4
+          Text = '10/12/2023'
           DataField = 'dt_orcamento'
           DataSource = dsModelo
         end
@@ -232,8 +246,12 @@ inherited OrcamentoF: TOrcamentoF
           DateOrder = doNone
           ButtonWidth = 23
           NumGlyphs = 1
+          Font.Color = 4915330
+          Font.Style = [fsBold]
           MaxLength = 0
+          ParentFont = False
           TabOrder = 5
+          Text = '25/12/2023'
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
@@ -246,7 +264,10 @@ inherited OrcamentoF: TOrcamentoF
           DataSource = dsModelo
           ReadOnly = True
           Alignment = taRightJustify
+          Font.Color = 4915330
+          Font.Style = [fsBold]
           MaxLength = 0
+          ParentFont = False
           TabOrder = 6
         end
       end
@@ -267,45 +288,52 @@ inherited OrcamentoF: TOrcamentoF
           Color = 14211288
           Columns = <          
             item
-              Title.Caption = 'orcamentoid'
+              Title.Caption = 'Orc ID'
+              Width = 60
               FieldName = 'orcamentoid'
             end          
             item
-              Title.Caption = 'orcamentoitemid'
+              Title.Caption = 'Orc Item ID'
+              Width = 100
               FieldName = 'orcamentoitemid'
             end          
             item
-              Title.Caption = 'produtoid'
+              Title.Caption = 'Produto ID'
+              Width = 100
               FieldName = 'produtoid'
             end          
             item
               PickList.Strings = (
-                'Produto15'
-                'teste5'
-                'FOLHA DIAMANTE'
+                'teste22'
+                ''
                 'CHAPA DOURADA'
                 'FOLHA METALICA'
                 'CHAPA METALICA'
               )
-              Title.Caption = 'descricao'
+              Title.Caption = 'Descrição do produto'
+              Width = 400
               FieldName = 'descricao'
             end          
             item
-              Title.Caption = 'qt_produto'
+              Title.Caption = 'Quantidade'
               FieldName = 'qt_produto'
             end          
             item
-              Title.Caption = 'vl_unitario'
+              Title.Caption = 'Valor Un.'
               FieldName = 'vl_unitario'
             end          
             item
-              Title.Caption = 'vl_total'
+              Title.Caption = 'Valor Total'
               FieldName = 'vl_total'
             end>
           DataSource = dsOrcamentoItem
           FixedColor = 14211288
           FixedHotColor = clNone
           Flat = True
+          Font.Color = 4915330
+          Font.Height = -16
+          Font.Style = [fsBold]
+          ParentFont = False
           Scrollbars = ssAutoBoth
           TabOrder = 0
         end

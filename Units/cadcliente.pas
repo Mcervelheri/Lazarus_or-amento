@@ -81,7 +81,10 @@ end;
 procedure TCadClienteF.btnEditarClick(Sender: TObject);
 begin
   DMF.qryCliente.Edit;
-  PageControl1.ActivePage := tsConsulta;
+  btnSalvar.Enabled:=True;
+  cbTipo.Enabled:=True;
+  edtCPFCNPJ.Enabled:=True;
+  edtNome.Enabled:=True;
 end;
 
 procedure TCadClienteF.btnCancelarClick(Sender: TObject);
@@ -119,6 +122,10 @@ end;
 
 procedure TCadClienteF.DBGrid1DblClick(Sender: TObject);
 begin
+  btnSalvar.Enabled:=False;
+  cbTipo.Enabled:=False;
+  edtCPFCNPJ.Enabled:=False;
+  edtNome.Enabled:=False;
   PageControl1.ActivePage := tsCadastrar;
 end;
 

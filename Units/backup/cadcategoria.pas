@@ -66,9 +66,9 @@ begin
   end;
   DMF.qryCategoria.Close;
   DMF.qryCategoria.SQL.Text :=
-    'select categoriaprodutoid as id, ds_categoria_produto as descrição ' +
+    'select categoriaprodutoid, ds_categoria_produto ' +
     'from categoria_produto ' +
-    condPesquisa + ' order by id desc';
+    condPesquisa + ' order by categoriaprodutoid desc';
 
   DMF.qryCategoria.Open;
   edtPesquisarDesc.Text := '';
@@ -155,6 +155,7 @@ end;
 
 procedure TCadCategoriaF.SpeedButton2Click(Sender: TObject);
 begin
+  btnSalvar.Enabled:=True;
   PageControl1.ActivePage := tsCadastrar;
   DMF.qryCategoria.Insert;
   edtDesc.SetFocus;

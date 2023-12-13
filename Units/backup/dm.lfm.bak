@@ -25,10 +25,9 @@ object DMF: TDMF
   object qryCategoria: TZQuery
     Connection = ZConnection1
     AfterInsert = qryCategoriaAfterInsert
-    Active = True
     SQL.Strings = (
-      'select categoriaprodutoid as id, '
-      'ds_categoria_produto as descrição '
+      'select categoriaprodutoid, '
+      'ds_categoria_produto '
       'from categoria_produto'
       'order by id desc'
     )
@@ -36,25 +35,6 @@ object DMF: TDMF
     WhereMode = wmWhereAll
     Left = 40
     Top = 80
-    object qryCategoriaid: TLongintField
-      FieldKind = fkData
-      FieldName = 'id'
-      Index = 0
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-    end
-    object qryCategoriadescrio: TStringField
-      FieldKind = fkData
-      FieldName = 'descrição'
-      Index = 1
-      LookupCache = False
-      ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
-      Required = True
-      Size = 50
-    end
   end
   object qryGenerica: TZQuery
     Connection = ZConnection1
@@ -65,7 +45,6 @@ object DMF: TDMF
   object qryProduto: TZQuery
     Connection = ZConnection1
     AfterInsert = qryProdutoAfterInsert
-    Active = True
     SQL.Strings = (
       'select produtoid as id, '
       'categoriaprodutoid as categoria,'
@@ -116,7 +95,7 @@ object DMF: TDMF
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      DisplayFormat = '.00'
+      DisplayFormat = 'R$###,##0.00'
       Precision = 983042
     end
     object qryProdutodata_cadastro: TDateTimeField
@@ -325,7 +304,6 @@ object DMF: TDMF
   end
   object qryOrcamentoItem: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
       'select orcamentoid, orcamentoitemid, produtoid, qt_produto, vl_unitario, vl_total from orcamento_item order by orcamentoid desc'
     )

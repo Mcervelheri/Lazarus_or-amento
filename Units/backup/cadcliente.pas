@@ -14,7 +14,7 @@ type
 
   TCadClienteF = class(TCadModeloF)
     cbTipo: TDBComboBox;
-    DBText1: TDBText;
+    txtId: TDBText;
     edtCPFCNPJ: TDBEdit;
     edtNome: TDBEdit;
     edtPesquisarDesc: TEdit;
@@ -81,6 +81,10 @@ end;
 procedure TCadClienteF.btnEditarClick(Sender: TObject);
 begin
   DMF.qryCliente.Edit;
+  btnSalvar.Enabled:=True;
+  cbTipo.Enabled:=True;
+  edtCPFCNPJ.Enabled:=True;
+  edtNome.Enabled:=True;
   PageControl1.ActivePage := tsConsulta;
 end;
 
@@ -99,7 +103,7 @@ end;
 
 procedure TCadClienteF.btnExcluirClick(Sender: TObject);
 begin
-  if MessageDlg('Você tem certeza que deseja excluir o registro?',
+  if MessageDlg('Você tem certeza que deseja excluir o registro '+txtId.Field.AsString+' ?',
     mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
     DMF.qryCliente.Delete;
@@ -119,6 +123,10 @@ end;
 
 procedure TCadClienteF.DBGrid1DblClick(Sender: TObject);
 begin
+  btnSalvar.Enabled:=False;
+  cbTipo.Enabled:=False;
+  edtCPFCNPJ.Enabled:=False;
+  edtNome.Enabled:=False;
   PageControl1.ActivePage := tsCadastrar;
 end;
 
@@ -126,26 +134,21 @@ procedure TCadClienteF.edtCPFCNPJEditingDone(Sender: TObject);
 var
   cpj, cnpj, original, slice1, slice2, slice3, slice4,documento: string;
   begin
-    documento:=edtCPFCNPJ.Text;
-    // Remover caracteres não numéricos
+    documento := edtCPFCNPJ.Text;
     documento := StringReplace(documento, '.', '', [rfReplaceAll]);
     documento := StringReplace(documento, '-', '', [rfReplaceAll]);
     documento := StringReplace(documento, '/', '', [rfReplaceAll]);
 
-    // Verificar se é CPF (11 dígitos) ou CNPJ (14 dígitos)
     if Length(documento) = 11 then
     begin
-      // Formatar CPF: XXX.XXX.XXX-YY
       documento := Format('%s.%s.%s-%s', [Copy(documento, 1, 3), Copy(documento, 4, 3), Copy(documento, 7, 3), Copy(documento, 10, 2)]);
     end
     else if Length(documento) = 14 then
     begin
-      // Formatar CNPJ: XX.XXX.XXX/YYYY-ZZ
       documento := Format('%s.%s.%s/%s-%s', [Copy(documento, 1, 2), Copy(documento, 3, 3), Copy(documento, 6, 3), Copy(documento, 9, 4), Copy(documento, 13, 2)]);
     end
     else
     begin
-      // Caso não seja CPF nem CNPJ, retornar sem formatação
       ShowMessage('documento inválido');
     end;
     edtCPFCNPJ.Field.AsString:=documento;

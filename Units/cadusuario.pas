@@ -26,6 +26,7 @@ type
     Label7: TLabel;
     procedure btnAdicionarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnPesquisaClick(Sender: TObject);
@@ -114,6 +115,10 @@ end;
 
 procedure TCadUsuarioF.DBGrid1DblClick(Sender: TObject);
 begin
+  btnSalvar.Enabled:=False;
+  edtNome.Enabled:=False;
+  edtUsuario.Enabled:=False;
+  edtSenha.Enabled:=False;
   PageControl1.ActivePage:=tsCadastrar;
 end;
 
@@ -128,6 +133,15 @@ procedure TCadUsuarioF.btnCancelarClick(Sender: TObject);
 begin
   DMF.qryUsuario.Cancel;
   PageControl1.ActivePage:=tsConsulta;
+end;
+
+procedure TCadUsuarioF.btnEditarClick(Sender: TObject);
+begin
+  DMF.qryUsuario.Edit;
+  btnSalvar.Enabled:=True;
+  edtNome.Enabled:=True;
+  edtUsuario.Enabled:=True;
+  edtSenha.Enabled:=True;
 end;
 
 procedure TCadUsuarioF.btnExcluirClick(Sender: TObject);

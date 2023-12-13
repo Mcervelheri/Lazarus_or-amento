@@ -89,6 +89,8 @@ inherited CadClienteF: TCadClienteF
           OnClick = btnSalvarClick
         end
         inherited btnCancelar: TSpeedButton
+          Top = 368
+          Anchors = [akLeft, akBottom]
           OnClick = btnCancelarClick
         end
         inherited btnExcluir: TSpeedButton
@@ -157,6 +159,7 @@ inherited CadClienteF: TCadClienteF
           Color = 15461355
           DataField = 'tipo'
           DataSource = dsModelo
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           ItemHeight = 28
@@ -192,6 +195,7 @@ inherited CadClienteF: TCadClienteF
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 18
@@ -208,19 +212,21 @@ inherited CadClienteF: TCadClienteF
           DataSource = dsModelo
           BorderStyle = bsNone
           Color = 15461355
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           MaxLength = 100
           ParentFont = False
           TabOrder = 2
         end
-        object DBText1: TDBText[7]
+        object txtId: TDBText[7]
           Left = 160
           Height = 28
           Top = 40
           Width = 14
           DataField = 'id'
           DataSource = dsModelo
+          Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
           ParentColor = False

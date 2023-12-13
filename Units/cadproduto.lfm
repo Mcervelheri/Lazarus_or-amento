@@ -1,7 +1,7 @@
 inherited CadProdutoF: TCadProdutoF
-  Left = 279
+  Left = 287
   Height = 533
-  Top = 102
+  Top = 122
   Width = 1001
   Caption = 'Tela modelo de produto'
   ClientHeight = 533
@@ -1041,40 +1041,53 @@ inherited CadProdutoF: TCadProdutoF
           item
             PickList.Strings = (            )
             Title.Caption = 'ID'
-            Width = 60
+            Width = 40
             FieldName = 'id'
           end        
           item
-            PickList.Strings = (            )
+            PickList.Strings = (
+              'TESTE 28'
+              'teste16'
+              'teste'
+              'teste5'
+              'ELITE'
+              'PREMIUM'
+              'PLATINUM'
+              'BASIC'
+            )
             Title.Caption = 'Categoria'
-            Width = 80
-            FieldName = 'categoria'
+            Width = 90
+            FieldName = 'ds_categoria_produto'
           end        
           item
             PickList.Strings = (            )
             Title.Caption = 'Descrição'
-            Width = 300
+            Width = 350
             FieldName = 'descricao'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Valor de venda'
+            Title.Caption = 'Valor'
+            Width = 110
             FieldName = 'valor_venda'
+            DisplayFormat = 'R$###,##0.00'
           end        
           item
             PickList.Strings = (            )
-            Title.Caption = 'Data do Cadastro'
+            Title.Caption = 'Data de cadastro'
+            Width = 140
             FieldName = 'data_cadastro'
           end        
           item
             PickList.Strings = (            )
             Title.Caption = 'Status'
+            Width = 80
             FieldName = 'status'
           end        
           item
             PickList.Strings = (            )
             Title.Caption = 'Observação'
-            Width = 300
+            Width = 250
             FieldName = 'observacao'
           end>
         Flat = True
@@ -1229,10 +1242,9 @@ inherited CadProdutoF: TCadProdutoF
           Left = 164
           Height = 28
           Top = 240
-          Width = 88
+          Width = 128
           DataField = 'valor_venda'
           DataSource = dsModelo
-          Alignment = taRightJustify
           BorderStyle = bsNone
           Color = 15461355
           Font.CharSet = ANSI_CHARSET
@@ -1333,16 +1345,14 @@ inherited CadProdutoF: TCadProdutoF
           Height = 36
           Top = 136
           Width = 132
+          CharCase = ecUppercase
           Color = 15461355
-          DataField = 'id'
-          DataSource = dsCategoria
+          DataField = 'ds_categoria_produto'
+          DataSource = dsModelo
           Font.Color = 4915330
           Font.Height = -20
           Font.Style = [fsBold, fsItalic]
-          KeyField = 'id'
-          ListField = 'descrição'
           ListFieldIndex = 0
-          ListSource = dsCategoria
           LookupCache = False
           ParentFont = False
           TabOrder = 1
@@ -1371,6 +1381,6 @@ inherited CadProdutoF: TCadProdutoF
   end
   object dsCategoria: TDataSource[2]
     Left = 24
-    Top = 432
+    Top = 424
   end
 end

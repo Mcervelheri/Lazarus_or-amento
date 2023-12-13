@@ -1,7 +1,7 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 318
+  Left = 216
   Height = 507
-  Top = 153
+  Top = 75
   Width = 1111
   Caption = 'Orcamento'
   ClientHeight = 507
@@ -12,8 +12,6 @@ inherited OrcamentoF: TOrcamentoF
   inherited PageControl1: TPageControl
     Height = 507
     Width = 1111
-    ActivePage = tsConsulta
-    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 499
       ClientWidth = 1103

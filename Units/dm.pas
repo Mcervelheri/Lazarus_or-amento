@@ -12,9 +12,8 @@ type
   { TDMF }
 
   TDMF = class(TDataModule)
-    qryCategoriadescricao: TStringField;
-    qryCategoriadescrio: TStringField;
-    qryCategoriaid: TLongintField;
+    qryCategoriacategoriaprodutoid: TLongintField;
+    qryCategoriads_categoria_produto: TStringField;
     qryClientecpf_cnpj: TStringField;
     qryClienteid: TLongintField;
     qryClientenome: TStringField;
@@ -83,7 +82,7 @@ end;
 
 procedure TDMF.qryCategoriaAfterInsert(DataSet: TDataSet);
 begin
-  qryCategoriaid.AsInteger := strtoint(getSequence('categoria'));
+  //qryCategoriaprodutoid.AsInteger := strtoint(getSequence('categoria'));
 
 end;
 
