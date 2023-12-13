@@ -5,15 +5,17 @@ unit TelaInicial;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, EditBtn,
-  ExtCtrls, CadCategoria, CadProduto, CadCliente, CadUsuario, Orcamento,
-  RelCategoria, RelProdutos, RelClientes, RelOrcamento, RelOrcItens;
+  Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, Menus, EditBtn,
+  ExtCtrls, StdCtrls, DBCtrls, CadCategoria, CadProduto, CadCliente, CadUsuario,
+  Orcamento, RelCategoria, RelProdutos, RelClientes, RelOrcamento, RelOrcItens;
 
 type
 
   { TTelaInicialF }
 
   TTelaInicialF = class(TForm)
+    DataSource1: TDataSource;
+    DBText1: TDBText;
     Image1: TImage;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;

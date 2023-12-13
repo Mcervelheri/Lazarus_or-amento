@@ -1,25 +1,25 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 318
-  Height = 507
-  Top = 153
-  Width = 1111
+  Left = 198
+  Height = 775
+  Top = 201
+  Width = 1307
   Caption = 'Orcamento'
-  ClientHeight = 507
-  ClientWidth = 1111
+  ClientHeight = 775
+  ClientWidth = 1307
   Color = 14211288
   OnClose = FormClose
   OnShow = FormShow
   inherited PageControl1: TPageControl
-    Height = 507
-    Width = 1111
+    Height = 775
+    Width = 1307
     ActivePage = tsConsulta
     TabIndex = 0
     inherited tsConsulta: TTabSheet
-      ClientHeight = 499
-      ClientWidth = 1103
+      ClientHeight = 767
+      ClientWidth = 1299
       inherited Panel1: TPanel
-        Width = 1103
-        ClientWidth = 1103
+        Width = 1299
+        ClientWidth = 1299
         inherited edtPesquisarID: TEdit
           Left = 112
           Font.Color = 4915330
@@ -30,20 +30,21 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel2: TPanel
-        Height = 419
-        ClientHeight = 419
+        Height = 687
+        ClientHeight = 687
         inherited btnAdicionar: TSpeedButton
           OnClick = btnAdicionarClick
         end
         inherited btnFechar: TSpeedButton
-          Top = 331
+          Top = 624
           OnClick = btnFecharClick
         end
       end
       inherited DBGrid1: TDBGrid
-        Height = 419
-        Width = 1039
-        AlternateColor = clSilver
+        Height = 687
+        Width = 1235
+        AlternateColor = 14211288
+        Color = clSilver
         Columns = <        
           item
             PickList.Strings = (            )
@@ -81,16 +82,16 @@ inherited OrcamentoF: TOrcamentoF
       end
     end
     inherited tsCadastrar: TTabSheet
-      ClientHeight = 499
-      ClientWidth = 1103
+      ClientHeight = 767
+      ClientWidth = 1299
       inherited Panel3: TPanel
-        Height = 419
-        ClientHeight = 419
+        Height = 687
+        ClientHeight = 687
         inherited btnSalvar: TSpeedButton
           OnClick = btnSalvarClick
         end
         inherited btnCancelar: TSpeedButton
-          Top = 363
+          Top = 631
           Anchors = [akLeft, akBottom]
           OnClick = btnCancelarClick
         end
@@ -102,12 +103,12 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel4: TPanel
-        Width = 1103
-        ClientWidth = 1103
+        Width = 1299
+        ClientWidth = 1299
         inherited Label2: TLabel
           Left = 1368
           Top = 0
-          Width = 0
+          Width = 196
           Caption = 'Orçamento'
         end
         object Label5: TLabel[1]
@@ -185,7 +186,7 @@ inherited OrcamentoF: TOrcamentoF
           TabOrder = 1
         end
         object Label4: TLabel[6]
-          Left = 369
+          Left = 633
           Height = 21
           Top = 11
           Width = 87
@@ -200,27 +201,33 @@ inherited OrcamentoF: TOrcamentoF
           ParentFont = False
         end
         object btnAdicionarItem: TButton[7]
-          Left = 352
+          Left = 616
           Height = 25
           Top = 51
           Width = 104
           Caption = 'Adicionar item'
           Enabled = False
+          Font.Color = 4915330
+          Font.Style = [fsBold]
           OnClick = btnAdicionarItemClick
+          ParentFont = False
           TabOrder = 2
         end
         object btnRemoverItem: TButton[8]
-          Left = 465
+          Left = 729
           Height = 25
           Top = 51
           Width = 104
           Caption = 'Remover item'
           Enabled = False
+          Font.Color = 4915330
+          Font.Style = [fsBold]
           OnClick = btnRemoverItemClick
+          ParentFont = False
           TabOrder = 3
         end
         object edtDataOrc: TDBDateEdit[9]
-          Left = 240
+          Left = 504
           Height = 23
           Top = 8
           Width = 103
@@ -233,12 +240,12 @@ inherited OrcamentoF: TOrcamentoF
           MaxLength = 0
           ParentFont = False
           TabOrder = 4
-          Text = '10/12/2023'
+          Text = '12/12/2023'
           DataField = 'dt_orcamento'
           DataSource = dsModelo
         end
         object edtDataVal: TDBDateEdit[10]
-          Left = 240
+          Left = 504
           Height = 23
           Top = 40
           Width = 103
@@ -251,12 +258,12 @@ inherited OrcamentoF: TOrcamentoF
           MaxLength = 0
           ParentFont = False
           TabOrder = 5
-          Text = '25/12/2023'
+          Text = '27/12/2023'
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
         object edtValorTotalOrc: TDBEdit[11]
-          Left = 472
+          Left = 736
           Height = 23
           Top = 11
           Width = 80
@@ -270,22 +277,35 @@ inherited OrcamentoF: TOrcamentoF
           ParentFont = False
           TabOrder = 6
         end
+        object DBText1: TDBText[12]
+          Left = 208
+          Height = 21
+          Top = 40
+          Width = 205
+          DataField = 'nome'
+          DataSource = dsModelo
+          Font.Color = 4915330
+          Font.Height = -16
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
       end
       inherited Panel5: TPanel
-        Height = 419
-        Width = 1039
-        ClientHeight = 419
-        ClientWidth = 1039
+        Height = 687
+        Width = 1235
+        ClientHeight = 687
+        ClientWidth = 1235
         object DBGrid2: TDBGrid[0]
           Left = 1
-          Height = 417
+          Height = 685
           Top = 1
-          Width = 1037
+          Width = 1233
           Align = alClient
-          AlternateColor = clSilver
+          AlternateColor = 14211288
           AutoEdit = False
           BorderStyle = bsNone
-          Color = 14211288
+          Color = clSilver
           Columns = <          
             item
               Title.Caption = 'Orc ID'
@@ -304,8 +324,9 @@ inherited OrcamentoF: TOrcamentoF
             end          
             item
               PickList.Strings = (
-                'teste22'
-                ''
+                'Produto15'
+                'teste5'
+                'FOLHA DIAMANTE'
                 'CHAPA DOURADA'
                 'FOLHA METALICA'
                 'CHAPA METALICA'

@@ -142,13 +142,9 @@ begin
     DMF.qryProduto.SQL.Text := select;
 
   end
-  else if pesqDesc then
+  else if pesqDesc and pesqStatus and pesqValor and pesqData then
   begin
-    if pesqStatus then
-    begin
-      if pesqValor then
-      begin
-        if rgPesquisaValorVenda.ItemIndex = 0 then
+    if rgPesquisaValorVenda.ItemIndex = 0 then
         begin
           operador := '>';
         end
@@ -160,10 +156,7 @@ begin
         begin
           operador := '=';
         end;
-        if pesqData then
-        begin
-
-          condicao := 'where Upper(ds_produto) like ' + QuotedStr(
+    condicao := 'where Upper(ds_produto) like ' + QuotedStr(
             '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
             ' and status_produto = ' + QuotedStr(
             rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
@@ -172,8 +165,9 @@ begin
             ' and ' + QuotedStr(DateToStr(dtFim.Date)) + ' order by ds_produto asc';
           select := select + ' ' + condicao;
           DMF.qryProduto.SQL.Text := select;
-        end
-        else
+
+  end
+  else if pesqDesc and pesqStatus and pesqValor then
         begin
           condicao := 'where Upper(ds_produto) like ' + QuotedStr(
             '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
@@ -183,10 +177,8 @@ begin
             ' order by ds_produto asc';
           select := select + ' ' + condicao;
           DMF.qryProduto.SQL.Text := select;
-        end;
-      end
-      else
-
+        end
+      else if pesqDesc and pesqStatus then
       begin
         condicao := 'where Upper(ds_produto) like ' + QuotedStr(
           '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
@@ -377,7 +369,7 @@ end;
 
 procedure TCadProdutoF.btnEditarClick(Sender: TObject);
 begin
-  DMF.qryCategoria.Edit;
+  DMF.qryProduto.Edit;
   edtDesc.Enabled:=True;
   lcbCategoria.Enabled:=True;
   cbStatus.Enabled:=True;

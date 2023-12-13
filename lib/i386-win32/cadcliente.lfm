@@ -4,6 +4,8 @@ inherited CadClienteF: TCadClienteF
   Caption = 'Cadastro de Cliente'
   OnClose = FormClose
   inherited PageControl1: TPageControl
+    ActivePage = tsConsulta
+    TabIndex = 0
     inherited tsConsulta: TTabSheet
       inherited Panel1: TPanel
         inherited btnPesquisa: TSpeedButton
@@ -45,6 +47,7 @@ inherited CadClienteF: TCadClienteF
           OnClick = btnAdicionarClick
         end
         inherited btnFechar: TSpeedButton
+          Top = 368
           OnClick = btnFecharClick
         end
       end

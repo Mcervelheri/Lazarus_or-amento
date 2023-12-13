@@ -2,6 +2,7 @@ inherited CadUsuarioF: TCadUsuarioF
   Left = 376
   Top = 114
   Caption = 'Cadastro Usuário'
+  OnShow = FormShow
   inherited PageControl1: TPageControl
     inherited tsConsulta: TTabSheet
       inherited Panel1: TPanel
@@ -49,6 +50,7 @@ inherited CadUsuarioF: TCadUsuarioF
           OnClick = btnAdicionarClick
         end
         inherited btnFechar: TSpeedButton
+          Top = 368
           OnClick = btnFecharClick
         end
       end
@@ -183,7 +185,7 @@ inherited CadUsuarioF: TCadUsuarioF
           Left = 160
           Height = 28
           Top = 40
-          Width = 14
+          Width = 12
           DataField = 'id'
           DataSource = dsModelo
           Font.Color = 4915330
@@ -196,7 +198,7 @@ inherited CadUsuarioF: TCadUsuarioF
           Left = 160
           Height = 28
           Top = 136
-          Width = 264
+          Width = 368
           DataField = 'nome'
           DataSource = dsModelo
           BorderStyle = bsNone

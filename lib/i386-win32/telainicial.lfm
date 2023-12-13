@@ -11,11 +11,12 @@ object TelaInicialF: TTelaInicialF
   LCLVersion = '2.2.6.0'
   WindowState = wsMaximized
   object Image1: TImage
-    Left = 424
+    Left = 712
     Height = 500
-    Top = 80
+    Top = 208
     Width = 500
     AutoSize = True
+    Center = True
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869633C70010089504E47
       0D0A1A0A0000000D49484452000001F4000001F40806000000CBD6DF8A000000
@@ -2966,6 +2967,20 @@ object TelaInicialF: TTelaInicialF
       42E0FF073B0E1BCBC43E64D80000000049454E44AE426082
     }
   end
+  object DBText1: TDBText
+    Left = 0
+    Height = 54
+    Top = 72
+    Width = 320
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    DataSource = DataSource1
+    Font.Color = 4915330
+    Font.Height = -40
+    Font.Style = [fsBold, fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
   object MainMenu1: TMainMenu
     Left = 288
     object miCadastro: TMenuItem
@@ -3219,5 +3234,10 @@ object TelaInicialF: TTelaInicialF
     object miSobre: TMenuItem
       Caption = 'Sobre'
     end
+  end
+  object DataSource1: TDataSource
+    DataSet = DMF.qryGenerica
+    Left = 280
+    Top = 74
   end
 end

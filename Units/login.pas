@@ -13,6 +13,7 @@ type
   { TLoginF }
 
   TLoginF = class(TForm)
+    cbMostrarSenha: TCheckBox;
     edtLogin: TEdit;
     edtSenha: TEdit;
     Label1: TLabel;
@@ -22,10 +23,10 @@ type
     btnCancelarLogin: TSpeedButton;
     procedure btnCancelarLoginClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);
-    procedure edtSenhaKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
-      );
+    procedure cbMostrarSenhaClick(Sender: TObject);
+    procedure edtSenhaKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
-    function ValidaUsuario(pUsusario: String; pSenha: String): Boolean;
+    function ValidaUsuario(pUsusario: string; pSenha: string): boolean;
   private
 
   public
@@ -43,70 +44,97 @@ implementation
 
 procedure TLoginF.btnCancelarLoginClick(Sender: TObject);
 begin
-  close;
+  Close;
 end;
 
 procedure TLoginF.btnLoginClick(Sender: TObject);
 var
-  usuario, senha: String;
+  usuario, senha, xUsuario: string;
 begin
-  usuario:=edtLogin.Text;
-  senha:=edtSenha.Text;
+  xUsuario := edtLogin.Text;
+  usuario := edtLogin.Text;
+  senha := edtSenha.Text;
   if ValidaUsuario(usuario, senha) = True then
   begin
-    TelaInicialF:=TTelaInicialF.create(self);
+    TelaInicialF := TTelaInicialF.Create(self);
+    DMF.qryGenerica.Close;
+    DMF.qryGenerica.SQL.Clear;
+    DMF.qryGenerica.SQL.Add(
+      'select id, usuario, ' +
+      'nome_completo, ' + 'senha ' +
+      'from usuarios where usuario = ' + QuotedStr(usuario));
+    DMF.qryGenerica.Open;
+    xUsuario :=
+      DMF.qryGenerica.FieldByName('nome_completo').AsString;
+
+
     TelaInicialF.Show;
-    edtLogin.Text:='';
-    edtSenha.Text:='';
+    TelaInicialF.DBText1.Caption:='Bem-Vindo '+xUsuario;
+    edtLogin.Text := '';
+    edtSenha.Text := '';
   end;
 end;
 
-procedure TLoginF.edtSenhaKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TLoginF.cbMostrarSenhaClick(Sender: TObject);
 begin
-  if ord(Key) = 13 then
-  btnLoginClick(Sender);
+  if cbMostrarSenha.Checked = True then
+  begin
+    edtSenha.PasswordChar := #0;
+  end
+  else
+  begin
+    edtSenha.PasswordChar := '*';
+  end;
 end;
 
-function TLoginF.ValidaUsuario(pUsusario: String; pSenha: String): Boolean;
+procedure TLoginF.edtSenhaKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+var
+  xUsuario: string;
 begin
-   if (pUsusario = '') then
-   begin
-      ShowMessage('Favor Preencha o Usuário!');
-      edtLogin.SetFocus;
-      Exit;
-   end;
+  if Ord(Key) = 13 then
+  begin
+    btnLoginClick(Sender);
+  end;
+end;
 
-   if (pSenha = '') then
-   begin
-      ShowMessage('Favor Preencha a Senha!');
-      edtSenha.SetFocus;
-      Exit;
-   end;
+function TLoginF.ValidaUsuario(pUsusario: string; pSenha: string): boolean;
+begin
+  if (pUsusario = '') then
+  begin
+    ShowMessage('Favor Preencha o Usuário!');
+    edtLogin.SetFocus;
+    Exit;
+  end;
 
-   DMF.qryGenerica.Close;
-   DMF.qryGenerica.SQL.Clear;
-   DMF.qryGenerica.SQL.Add('SELECT COUNT(*) AS NUMBER '+
-                                   'FROM USUARIOS '+
-                                   'WHERE USUARIO = ' +  QuotedStr(pUsusario) + ' ' +
-                                   'AND SENHA = ' + QuotedStr(pSenha));
-   DMF.qryGenerica.Open;
+  if (pSenha = '') then
+  begin
+    ShowMessage('Favor Preencha a Senha!');
+    edtSenha.SetFocus;
+    Exit;
+  end;
 
-   if DMF.qryGenerica.FieldByName('NUMBER').AsInteger = 0 then
-   Begin
-      ShowMessage('Senha ou Usuário incorretos!');
-      edtLogin.SetFocus;
-      Result := False
-   end
-   else
-      Result := True;
+  DMF.qryGenerica.Close;
+  DMF.qryGenerica.SQL.Clear;
+  DMF.qryGenerica.SQL.Add('SELECT COUNT(*) AS NUMBER ' +
+    'FROM USUARIOS ' +
+    'WHERE USUARIO = ' + QuotedStr(pUsusario) +
+    ' ' + 'AND SENHA = ' + QuotedStr(pSenha));
+  DMF.qryGenerica.Open;
+
+  if DMF.qryGenerica.FieldByName('NUMBER').AsInteger = 0 then
+  begin
+    ShowMessage('Senha ou Usuário incorretos!');
+    edtLogin.SetFocus;
+    Result := False;
+  end
+  else
+    Result := True;
 
 end;
 
 procedure TLoginF.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  CloseAction:=caFree;
+  CloseAction := caFree;
 end;
 
 end.
-

@@ -12,6 +12,8 @@ type
   { TDMF }
 
   TDMF = class(TDataModule)
+    qryCategoriacategoriaprodutoid: TLongintField;
+    qryCategoriads_categoria_produto: TStringField;
     qryClientecpf_cnpj: TStringField;
     qryClienteid: TLongintField;
     qryClientenome: TStringField;

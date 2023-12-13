@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="1899-12-30 00:00:00"/>
-    <ReportLastChange Value="2023-12-12 17:37:32"/>
+    <ReportLastChange Value="2023-12-13 15:32:06"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -223,7 +223,7 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="640"/>
-            <Top Value="9"/>
+            <Top Value="5"/>
             <Width Value="108"/>
             <Height Value="18"/>
           </Size>
@@ -239,7 +239,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[PAGE#] de [TOTALPAGES]&#xD;&#xA;"/>
+            <Memo Value="[PAGE#]&#xD;&#xA;"/>
             <Script Value=""/>
             <GapX Value="0"/>
             <GapY Value="0"/>
@@ -336,7 +336,7 @@
           <Size>
             <Left Value="48"/>
             <Top Value="182"/>
-            <Width Value="92"/>
+            <Width Value="132"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -448,7 +448,7 @@
           <Size>
             <Left Value="48"/>
             <Top Value="142"/>
-            <Width Value="92"/>
+            <Width Value="132"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -528,7 +528,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="140"/>
+            <Left Value="180"/>
             <Top Value="182"/>
             <Width Value="92"/>
             <Height Value="18"/>
@@ -584,7 +584,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="440"/>
+            <Left Value="480"/>
             <Top Value="182"/>
             <Width Value="132"/>
             <Height Value="18"/>
@@ -640,7 +640,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="232"/>
+            <Left Value="272"/>
             <Top Value="182"/>
             <Width Value="148"/>
             <Height Value="18"/>
@@ -696,7 +696,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="140"/>
+            <Left Value="180"/>
             <Top Value="142"/>
             <Width Value="92"/>
             <Height Value="18"/>
@@ -752,7 +752,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="440"/>
+            <Left Value="480"/>
             <Top Value="142"/>
             <Width Value="132"/>
             <Height Value="18"/>
@@ -808,7 +808,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="232"/>
+            <Left Value="272"/>
             <Top Value="142"/>
             <Width Value="148"/>
             <Height Value="18"/>
@@ -864,7 +864,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="380"/>
+            <Left Value="420"/>
             <Top Value="142"/>
             <Width Value="60"/>
             <Height Value="18"/>
@@ -920,7 +920,7 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="380"/>
+            <Left Value="420"/>
             <Top Value="182"/>
             <Width Value="60"/>
             <Height Value="18"/>
@@ -1058,9 +1058,9 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="572"/>
+            <Left Value="612"/>
             <Top Value="182"/>
-            <Width Value="168"/>
+            <Width Value="132"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -1114,9 +1114,9 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="572"/>
+            <Left Value="612"/>
             <Top Value="142"/>
-            <Width Value="168"/>
+            <Width Value="132"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -1196,7 +1196,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="232"/>
+            <Left Value="272"/>
             <Top Value="144"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1222,7 +1222,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="380"/>
+            <Left Value="420"/>
             <Top Value="144"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1248,7 +1248,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="440"/>
+            <Left Value="480"/>
             <Top Value="144"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1274,7 +1274,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="572"/>
+            <Left Value="612"/>
             <Top Value="144"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1300,7 +1300,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="140"/>
+            <Left Value="180"/>
             <Top Value="142"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1352,7 +1352,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="140"/>
+            <Left Value="180"/>
             <Top Value="184"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1378,7 +1378,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="232"/>
+            <Left Value="272"/>
             <Top Value="184"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1404,7 +1404,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="380"/>
+            <Left Value="420"/>
             <Top Value="184"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1430,7 +1430,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="440"/>
+            <Left Value="480"/>
             <Top Value="184"/>
             <Width Value="0"/>
             <Height Value="16"/>
@@ -1456,7 +1456,7 @@
           <Typ Value="gtLine"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="572"/>
+            <Left Value="612"/>
             <Top Value="184"/>
             <Width Value="0"/>
             <Height Value="16"/>

@@ -119,8 +119,11 @@ begin
   edtNome.Enabled:=False;
   edtUsuario.Enabled:=False;
   edtSenha.Enabled:=False;
+  cbMostrarSenha.Enabled:=False;
   PageControl1.ActivePage:=tsCadastrar;
+
 end;
+
 
 procedure TCadUsuarioF.btnAdicionarClick(Sender: TObject);
 begin
@@ -142,6 +145,7 @@ begin
   edtNome.Enabled:=True;
   edtUsuario.Enabled:=True;
   edtSenha.Enabled:=True;
+  cbMostrarSenha.Enabled:=True;
 end;
 
 procedure TCadUsuarioF.btnExcluirClick(Sender: TObject);

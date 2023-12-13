@@ -33,6 +33,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure cbMostrarSenhaClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -119,8 +120,11 @@ begin
   edtNome.Enabled:=False;
   edtUsuario.Enabled:=False;
   edtSenha.Enabled:=False;
+  cbMostrarSenha.Enabled:=False;
   PageControl1.ActivePage:=tsCadastrar;
+
 end;
+
 
 procedure TCadUsuarioF.btnAdicionarClick(Sender: TObject);
 begin
@@ -137,10 +141,12 @@ end;
 
 procedure TCadUsuarioF.btnEditarClick(Sender: TObject);
 begin
+  DMF.qryUsuario.Edit;
   btnSalvar.Enabled:=True;
   edtNome.Enabled:=True;
   edtUsuario.Enabled:=True;
   edtSenha.Enabled:=True;
+  cbMostrarSenha.Enabled:=True;
 end;
 
 procedure TCadUsuarioF.btnExcluirClick(Sender: TObject);

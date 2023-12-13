@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="1899-12-30 00:00:00"/>
-    <ReportLastChange Value="2023-12-13 09:02:48"/>
+    <ReportLastChange Value="2023-12-13 15:31:40"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -47,9 +47,9 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="0"/>
-            <Top Value="20"/>
+            <Top Value="0"/>
             <Width Value="752"/>
-            <Height Value="148"/>
+            <Height Value="168"/>
           </Size>
           <Flags Value="48"/>
           <Data>
@@ -223,7 +223,7 @@
           <StreamMode Value="0"/>
           <Size>
             <Left Value="684"/>
-            <Top Value="28"/>
+            <Top Value="8"/>
             <Width Value="64"/>
             <Height Value="18"/>
           </Size>
@@ -265,7 +265,7 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taCenter"/>
+          <Alignment Value="taRightJustify"/>
           <Layout Value="tlCenter"/>
           <Angle Value="0"/>
           <Justify Value="False"/>
@@ -295,7 +295,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[DMF.qryCategoria.&quot;id&quot;]&#xD;&#xA;"/>
+            <Memo Value="[DMF.qryCategoria.&quot;categoriaprodutoid&quot;]&#xD;&#xA;"/>
             <Script Value=""/>
             <GapX Value="0"/>
             <GapY Value="0"/>
@@ -351,7 +351,7 @@
           <Data>
             <Format Value="556"/>
             <FormatStr Value=""/>
-            <Memo Value="[DMF.qryCategoria.&quot;descricao&quot;]&#xD;&#xA;"/>
+            <Memo Value="[DMF.qryCategoria.&quot;ds_categoria_produto&quot;]&#xD;&#xA;"/>
             <Script Value=""/>
             <GapX Value="0"/>
             <GapY Value="0"/>

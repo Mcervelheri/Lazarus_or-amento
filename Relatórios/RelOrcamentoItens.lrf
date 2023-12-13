@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="1899-12-30 00:00:00"/>
-    <ReportLastChange Value="2023-12-12 17:39:21"/>
+    <ReportLastChange Value="2023-12-13 17:20:21"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -222,9 +222,9 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="680"/>
+            <Left Value="660"/>
             <Top Value="13"/>
-            <Width Value="64"/>
+            <Width Value="84"/>
             <Height Value="18"/>
           </Size>
           <Flags Value="3"/>
@@ -265,7 +265,7 @@
             <FillColor Value="clWhite"/>
             <HighlightStr Value=""/>
           </Highlight>
-          <Alignment Value="taCenter"/>
+          <Alignment Value="taRightJustify"/>
           <Layout Value="tlCenter"/>
           <Angle Value="0"/>
           <Justify Value="False"/>
@@ -1017,7 +1017,7 @@
             <Restrictions Value=""/>
           </Frames>
           <Data>
-            <Format Value="556"/>
+            <Format Value="16974380"/>
             <FormatStr Value=""/>
             <Memo Value="R$:[DMF.qryOrcamentoItem.&quot;vl_total&quot;]&#xD;&#xA;"/>
             <Script Value=""/>

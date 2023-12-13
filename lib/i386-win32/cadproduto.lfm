@@ -11,6 +11,8 @@ inherited CadProdutoF: TCadProdutoF
   inherited PageControl1: TPageControl
     Height = 533
     Width = 1001
+    ActivePage = tsConsulta
+    TabIndex = 0
     inherited tsConsulta: TTabSheet
       ClientHeight = 525
       ClientWidth = 993
@@ -1046,14 +1048,15 @@ inherited CadProdutoF: TCadProdutoF
           end        
           item
             PickList.Strings = (
-              'TESTE 28'
-              'teste16'
-              'teste'
-              'teste5'
+              'teste18'
+              'teste15'
+              'teste14'
+              'teste110'
+              'teste10'
+              'TESTE'
               'ELITE'
               'PREMIUM'
-              'PLATINUM'
-              'BASIC'
+              'BASICA'
             )
             Title.Caption = 'Categoria'
             Width = 90
@@ -1245,6 +1248,7 @@ inherited CadProdutoF: TCadProdutoF
           Width = 128
           DataField = 'valor_venda'
           DataSource = dsModelo
+          Alignment = taRightJustify
           BorderStyle = bsNone
           Color = 15461355
           Font.CharSet = ANSI_CHARSET

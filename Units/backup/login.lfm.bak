@@ -1,28 +1,29 @@
 object LoginF: TLoginF
-  Left = 455
-  Height = 266
+  Left = 454
+  Height = 215
   Top = 183
-  Width = 443
+  Width = 419
   Caption = 'Login'
-  ClientHeight = 266
-  ClientWidth = 443
+  ClientHeight = 215
+  ClientWidth = 419
   OnClose = FormClose
+  Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object pnLogin: TPanel
     Left = 0
-    Height = 266
+    Height = 215
     Top = 0
-    Width = 443
+    Width = 419
     Align = alClient
-    ClientHeight = 266
-    ClientWidth = 443
+    ClientHeight = 215
+    ClientWidth = 419
     Color = clSilver
     ParentColor = False
     TabOrder = 0
     object Label1: TLabel
-      Left = 101
+      Left = 37
       Height = 21
-      Top = 64
+      Top = 40
       Width = 42
       Caption = 'Login'
       Font.CharSet = ANSI_CHARSET
@@ -35,9 +36,9 @@ object LoginF: TLoginF
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 96
+      Left = 32
       Height = 21
-      Top = 104
+      Top = 80
       Width = 47
       Caption = 'Senha'
       Font.CharSet = ANSI_CHARSET
@@ -51,9 +52,9 @@ object LoginF: TLoginF
     end
     object btnLogin: TSpeedButton
       Cursor = crHandPoint
-      Left = 112
+      Left = 48
       Height = 50
-      Top = 144
+      Top = 120
       Width = 50
       Color = clNone
       Flat = True
@@ -378,9 +379,9 @@ object LoginF: TLoginF
     end
     object btnCancelarLogin: TSpeedButton
       Cursor = crHandPoint
-      Left = 248
+      Left = 184
       Height = 50
-      Top = 144
+      Top = 120
       Width = 50
       Color = clNone
       Flat = True
@@ -704,9 +705,9 @@ object LoginF: TLoginF
       OnClick = btnCancelarLoginClick
     end
     object edtLogin: TEdit
-      Left = 149
+      Left = 85
       Height = 21
-      Top = 64
+      Top = 40
       Width = 176
       BorderStyle = bsNone
       CharCase = ecUppercase
@@ -716,9 +717,9 @@ object LoginF: TLoginF
       TabOrder = 0
     end
     object edtSenha: TEdit
-      Left = 149
+      Left = 85
       Height = 21
-      Top = 104
+      Top = 80
       Width = 176
       BorderStyle = bsNone
       CharCase = ecUppercase
@@ -729,6 +730,18 @@ object LoginF: TLoginF
       ParentFont = False
       PasswordChar = '*'
       TabOrder = 1
+    end
+    object cbMostrarSenha: TCheckBox
+      Left = 264
+      Height = 25
+      Top = 76
+      Width = 127
+      Caption = 'Mostrar Senha'
+      Font.Height = -16
+      Font.Style = [fsBold, fsItalic]
+      OnClick = cbMostrarSenhaClick
+      ParentFont = False
+      TabOrder = 2
     end
   end
 end

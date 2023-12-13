@@ -85,7 +85,6 @@ begin
   cbTipo.Enabled:=True;
   edtCPFCNPJ.Enabled:=True;
   edtNome.Enabled:=True;
-  PageControl1.ActivePage := tsConsulta;
 end;
 
 procedure TCadClienteF.btnCancelarClick(Sender: TObject);

@@ -16,6 +16,7 @@ type
   TOrcamentoF = class(TCadModeloF)
     btnAdicionarItem: TButton;
     btnRemoverItem: TButton;
+    DBText1: TDBText;
     edtDataOrc: TDBDateEdit;
     edtDataVal: TDBDateEdit;
     edtValorTotalOrc: TDBEdit;
