@@ -56,10 +56,10 @@ implementation
 procedure TCadOrcamentoItemF.btnBuscarProdClick(Sender: TObject);
 begin
 
-  BucaProdutoF := TBucaProdutoF.Create(self);
-  BucaProdutoF.ShowModal;
+  BuscaProdutoF := TBuscaProdutoF.Create(self);
+  BuscaProdutoF.ShowModal;
   edtProdId.Field.AsString := DMF.qryProdutoid.AsString;
-  dbEdtValorUn.Field.Value:=StrToFloat(BucaProdutoF.lblValorProd.Caption);
+  dbEdtValorUn.Field.Value:=StrToFloat(BuscaProdutoF.lblValorProd.Caption);
   DMF.qryCliente.Open;
   dbEdtQtdProd.SetFocus;
 end;

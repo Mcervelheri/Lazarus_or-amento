@@ -23,7 +23,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TLoginF, LoginF);
   Application.CreateForm(TDMF, DMF);
-  Application.CreateForm(TSobreF, SobreF);
   Application.Run;
 end.
 

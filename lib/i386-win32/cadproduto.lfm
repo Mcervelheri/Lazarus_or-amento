@@ -127,7 +127,7 @@ inherited CadProdutoF: TCadProdutoF
           Top = 48
           Width = 79
           CenturyFrom = 1941
-          MaxDate = 2958465
+          MaxDate = 45291
           MinDate = 36526
           TabOrder = 6
           BorderStyle = bsNone
@@ -1048,15 +1048,14 @@ inherited CadProdutoF: TCadProdutoF
           end        
           item
             PickList.Strings = (
-              'teste18'
-              'teste15'
-              'teste14'
-              'teste110'
-              'teste10'
-              'TESTE'
+              'TESTE 28'
+              'TESTE 16'
+              'teste'
+              'teste5'
               'ELITE'
               'PREMIUM'
-              'BASICA'
+              'PLATINUM'
+              'BASIC'
             )
             Title.Caption = 'Categoria'
             Width = 90

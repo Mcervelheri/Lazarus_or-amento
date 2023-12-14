@@ -39,6 +39,11 @@ type
     procedure btnPesquisaClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    function pesqPorDesc(): string;
+    function pesqPorId(): string;
+    function pesqPorStatus(): string;
+    function pesqPorValor(): string;
+    function pesqPorData(): string;
   private
 
   public
@@ -54,240 +59,148 @@ implementation
 
 { TBuscaProdutoF }
 
+function TBuscaProdutoF.pesqPorId(): string;
+begin
+  Result := 'produtoid = ' + edtPesquisarID.Text;
+end;
+
+function TBuscaProdutoF.pesqPorDesc(): string;
+begin
+  Result := 'ds_produto like ' + QuotedStr('%' +
+    UpperCase(edtPesquisarDesc.Text) + '%');
+end;
+
+function TBuscaProdutoF.pesqPorStatus(): string;
+begin
+  Result := 'status_produto = ' + QuotedStr(
+    rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]);
+end;
+
+function TBuscaProdutoF.pesqPorValor(): string;
+var
+  operador: string;
+begin
+  if rgPesquisaValorVenda.ItemIndex = 0 then
+  begin
+    operador := '>';
+  end
+  else if rgPesquisaValorVenda.ItemIndex = 1 then
+  begin
+    operador := '<';
+  end
+  else if rgPesquisaValorVenda.ItemIndex = 2 then
+  begin
+    operador := '=';
+  end;
+  Result := 'vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text;
+end;
+
+function TBuscaProdutoF.pesqPorData(): string;
+begin
+  Result := 'dt_cadastro_produto between ' + QuotedStr(
+    DateToStr(dtInicio.Date)) + ' and ' + QuotedStr(DateToStr(dtFim.Date));
+end;
+
 procedure TBuscaProdutoF.btnPesquisaClick(Sender: TObject);
 var
   select, condicao, coluna, operador: string;
-begin
-  DMF.qryProduto.Close;
-  select := 'select ' + 'produtoid as id, ' + 'categoriaprodutoid as categoria, ' +
-    'ds_produto as descrição, ' + 'obs_produto as observação, ' +
-    'vl_venda_produto as valor_venda, ' + 'dt_cadastro_produto as data_cadastro, ' +
-    'status_produto as status ' + 'from produto';
-  if edtPesquisarID.Text <> '' then
   begin
-    pesqID := True;
-  end;
-  if edtPesquisarDesc.Text <> '' then
-  begin
-    pesqDesc := True;
-  end;
-  if rgPesquisarStatus.ItemIndex <> -1 then
-  begin
-    pesqStatus := True;
-  end;
-  if rgPesquisaValorVenda.ItemIndex <> -1 then
-  begin
-    pesqValor := True;
-  end;
 
-  if pesqID then
-  begin
-    condicao := 'where produtoid = ' + edtPesquisarID.Text + ' order by produtoid desc';
-    select := select + ' ' + condicao;
-    DMF.qryProduto.SQL.Text := select;
-    ShowMessage('condição id');
-
-  end
-  else if pesqDesc then
-  begin
-    if pesqStatus then
+    DMF.qryProduto.Close;
+    select := 'select ' + 'produtoid as id, ' + 'categoriaprodutoid as categoria, ' +
+      'ds_produto as descricao, ' + 'obs_produto as observacao, ' +
+      'vl_venda_produto as valor_venda, ' + 'dt_cadastro_produto as data_cadastro, ' +
+      'status_produto as status ' + 'from produto ';
+    if edtPesquisarID.Text <> '' then
     begin
-      if pesqValor then
-      begin
-        if rgPesquisaValorVenda.ItemIndex = 0 then
-        begin
-          operador := '>';
-        end
-        else if rgPesquisaValorVenda.ItemIndex = 1 then
-        begin
-          operador := '<';
-        end
-        else if rgPesquisaValorVenda.ItemIndex = 2 then
-        begin
-          operador := '=';
-        end;
-        if pesqData then
-        begin
-
-          condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-            '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-            ' and status_produto = ' + QuotedStr(
-            rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
-            ' and vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text +
-            ' and dt_cadastro_produto between ' + QuotedStr(DateToStr(dtInicio.Date)) +
-            ' and ' + QuotedStr(DateToStr(dtFim.Date)) + ' order by ds_produto asc';
-          select := select + ' ' + condicao;
-          DMF.qryProduto.SQL.Text := select;
-        end
-        else
-        begin
-          condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-            '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-            ' and status_produto = ' + QuotedStr(
-            rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
-            ' and vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text +
-            ' order by ds_produto asc';
-          select := select + ' ' + condicao;
-          DMF.qryProduto.SQL.Text := select;
-        end;
-      end
-      else
-
-      begin
-        condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-          '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-          ' and status_produto = ' + QuotedStr(
-          rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
-          ' order by ds_produto asc';
-        select := select + ' ' + condicao;
-        DMF.qryProduto.SQL.Text := select;
-      end;
+      pesqID := True;
+    end;
+    if edtPesquisarDesc.Text <> '' then
+    begin
+      pesqDesc := True;
+    end;
+    if rgPesquisarStatus.ItemIndex <> -1 then
+    begin
+      pesqStatus := True;
+    end;
+    if rgPesquisaValorVenda.ItemIndex <> -1 then
+    begin
+      pesqValor := True;
+    end;
+    if pesqId then
+    begin
+      select := select + pesqPorId();
+    end;
+    if pesqDesc and pesqStatus and pesqValor and pesqData then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' and ' + pesqPorStatus() +
+        ' and ' + pesqPorValor() + ' and ' + pesqPorData() + ' order by ds_produto desc';
+    end
+    else if pesqDesc and pesqStatus and pesqValor then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' and ' + pesqPorStatus() +
+        ' and ' + pesqPorValor() + ' order by ds_produto desc';
+    end
+    else if pesqDesc and pesqValor and pesqData then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' and ' +
+        pesqPorValor() + ' and ' + pesqPorData() + ' order by ds_produto desc';
+    end
+    else if pesqDesc and pesqData then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' and ' + pesqPorData() +
+        ' order by ds_produto desc';
+    end
+    else if pesqDesc and pesqStatus then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' and ' + pesqPorStatus() +
+        ' order by ds_produto desc';
+    end
+    else if pesqDesc then
+    begin
+      select := select + ' where ' + pesqPorDesc() + ' order by ds_produto desc';
+    end
+    else if pesqStatus and pesqValor and pesqData then
+    begin
+      select := select + ' where ' + pesqPorStatus() + ' and ' +
+        pesqPorValor() + ' and ' + pesqPorData() + ' order by ds_produto desc';
+    end
+    else if pesqStatus and pesqData then
+    begin
+      select := select + ' where ' + pesqPorStatus() + ' and ' +
+        pesqPorData() + ' order by ds_produto desc';
+    end
+    else if pesqStatus and pesqValor then
+    begin
+      select := select + ' where ' + pesqPorStatus() + ' and ' +
+        pesqPorValor() + ' order by ds_produto desc';
+    end
+    else if pesqStatus then
+    begin
+      select := select + ' where ' + pesqPorStatus() + ' order by ds_produto desc';
+    end
+    else if pesqValor and pesqData then
+    begin
+      select := select + ' where ' + pesqPorValor() + ' and ' +
+        pesqPorData() + ' order by ds_produto desc';
     end
     else if pesqValor then
     begin
-      if rgPesquisaValorVenda.ItemIndex = 0 then
-      begin
-        operador := '>';
-      end
-      else if rgPesquisaValorVenda.ItemIndex = 1 then
-      begin
-        operador := '<';
-      end
-      else if rgPesquisaValorVenda.ItemIndex = 2 then
-      begin
-        operador := '=';
-      end;
-      if pesqData then
-      begin
-
-        condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-          '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-          ' and vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text +
-          ' and dt_cadastro_produto between ' + QuotedStr(
-          DateToStr(dtInicio.Date)) + ' and ' + QuotedStr(DateToStr(dtFim.Date)) +
-          ' order by ds_produto asc';
-        select := select + ' ' + condicao;
-        DMF.qryProduto.SQL.Text := select;
-
-      end
-      else
-      begin
-
-        condicao := 'where Upper(ds_produto) like ' +
-          QuotedStr('%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-          ' and vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text +
-          ' order by ds_produto asc';
-        select := select + ' ' + condicao;
-        DMF.qryProduto.SQL.Text := select;
-      end;
-
+      select := select + ' where ' + pesqPorValor() + ' order by ds_produto desc';
     end
     else if pesqData then
     begin
-      condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-        '%' + UpperCase(edtPesquisarDesc.Text) + '%') +
-        'and dt_cadastro_produto between ' + QuotedStr(DateToStr(dtInicio.Date)) +
-        ' and ' + QuotedStr(DateToStr(dtFim.Date));
-      select := select + ' ' + condicao;
-      DMF.qryProduto.SQL.Text := select;
+      select := select + ' where ' + pesqPorData() + ' order by ds_produto desc';
     end
     else
     begin
-      condicao := 'where Upper(ds_produto) like ' + QuotedStr(
-        '%' + UpperCase(edtPesquisarDesc.Text) + '%') + ' order by ds_produto asc';
-      select := select + ' ' + condicao;
-      DMF.qryProduto.SQL.Text := select;
+      DMF.qryProduto.SQL.Text := select + ' order by id desc';
     end;
-  end
-  else if pesqStatus then
-  begin
-    if pesqValor then
-    begin
-      if rgPesquisaValorVenda.ItemIndex = 0 then
-      begin
-        operador := '>';
-      end
-      else if rgPesquisaValorVenda.ItemIndex = 1 then
-      begin
-        operador := '<';
-      end
-      else if rgPesquisaValorVenda.ItemIndex = 2 then
-      begin
-        operador := '=';
-      end;
-      if pesqData then
-      begin
-        condicao := 'where status_produto = ' + QuotedStr(
-          rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
-          ' and vl_venda_produto ' + operador + edtPesquisarValor.Text +
-          ' and dt_cadastro_produto between' + QuotedStr(DateToStr(dtInicio.Date)) +
-          ' and ' + QuotedStr(DateToStr(dtFim.Date));
-        select := select + ' ' + condicao;
-        DMF.qryProduto.SQL.Text := select;
-      end
-      else
-      begin
-        condicao := 'where status_produto = ' + QuotedStr(
-          rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]) +
-          ' and vl_venda_produto ' + operador + edtPesquisarValor.Text;
-        select := select + ' ' + condicao;
-        DMF.qryProduto.SQL.Text := select;
-      end;
-    end
-    else
-    begin
-      condicao := 'where status_produto = ' + QuotedStr(
-        rgPesquisarStatus.Items[rgPesquisarStatus.ItemIndex]);
-      select := select + ' ' + condicao;
-      DMF.qryProduto.SQL.Text := select;
-    end;
-  end
-  else if pesqValor then
-  begin
-    if rgPesquisaValorVenda.ItemIndex = 0 then
-    begin
-      operador := '>';
-    end
-    else if rgPesquisaValorVenda.ItemIndex = 1 then
-    begin
-      operador := '<';
-    end
-    else if rgPesquisaValorVenda.ItemIndex = 2 then
-    begin
-      operador := '=';
-    end;
-    if pesqData then
-    begin
-      condicao := 'where vl_venda_produto ' + operador + ' ' +
-        edtPesquisarValor.Text + ' and dt_cadastro_produto between ' +
-        QuotedStr(DateToStr(dtInicio.Date)) + ' and ' +
-        QuotedStr(DateToStr(dtFim.Date));
-      select := select + ' ' + condicao;
-      DMF.qryProduto.SQL.Text := select;
-      ShowMessage(DMF.qryProduto.SQL.Text);
-    end
-    else
-    begin
-      condicao := 'where vl_venda_produto ' + operador + ' ' + edtPesquisarValor.Text;
-      select := select + ' ' + condicao;
-      DMF.qryProduto.SQL.Text := select;
-    end;
-  end
-  else if pesqData then
-  begin
-    condicao := 'where dt_cadastro_produto between ' + QuotedStr(
-      DateToStr(dtInicio.Date)) + ' and ' + QuotedStr(DateToStr(dtFim.Date));
-    select := select + ' ' + condicao;
     DMF.qryProduto.SQL.Text := select;
-  end
-  else
-  begin
-    DMF.qryProduto.SQL.Text := select;
+    DMF.qryProduto.Open;
+    ShowMessage(DMF.qryProduto.SQL.Text);
+    sbLimparTudo.click;
   end;
-  DMF.qryProduto.Open;
-  sbLimparTudo.click;
-  ShowMessage(DMF.qryProduto.SQL.Text);
-end;
 
 procedure TBuscaProdutoF.DBGrid1DblClick(Sender: TObject);
 begin

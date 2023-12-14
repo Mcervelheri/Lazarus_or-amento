@@ -1,22 +1,22 @@
 object BuscaClienteF: TBuscaClienteF
   Left = 358
-  Height = 325
+  Height = 441
   Top = 209
-  Width = 570
+  Width = 884
   Caption = 'Buscar cliente'
-  ClientHeight = 325
-  ClientWidth = 570
+  ClientHeight = 441
+  ClientWidth = 884
   Position = poScreenCenter
   LCLVersion = '2.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 80
     Top = 0
-    Width = 570
+    Width = 884
     Align = alTop
     BevelColor = clSilver
     ClientHeight = 80
-    ClientWidth = 570
+    ClientWidth = 884
     Color = clSilver
     ParentColor = False
     TabOrder = 0
@@ -352,11 +352,14 @@ object BuscaClienteF: TBuscaClienteF
       Top = 24
       Width = 264
       BorderStyle = bsNone
+      CharCase = ecUppercase
       Color = 15461355
       Font.CharSet = ANSI_CHARSET
+      Font.Color = 4915330
       Font.Height = -16
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentBidiMode = False
       ParentFont = False
       TabOrder = 0
@@ -369,9 +372,11 @@ object BuscaClienteF: TBuscaClienteF
       BorderStyle = bsNone
       Color = 15461355
       Font.CharSet = ANSI_CHARSET
+      Font.Color = 4915330
       Font.Height = -16
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentBidiMode = False
       ParentFont = False
       TabOrder = 1
@@ -416,9 +421,9 @@ object BuscaClienteF: TBuscaClienteF
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Height = 245
+    Height = 361
     Top = 80
-    Width = 570
+    Width = 884
     Align = alClient
     AlternateColor = clSilver
     AutoEdit = False
@@ -427,28 +432,32 @@ object BuscaClienteF: TBuscaClienteF
     Columns = <    
       item
         Title.Caption = 'ID'
-        Width = 30
+        Width = 40
         FieldName = 'id'
       end    
       item
         Title.Caption = 'Tipo'
-        Width = 30
+        Width = 40
         FieldName = 'tipo'
       end    
       item
         Title.Caption = 'CPF/CNPJ'
-        Width = 130
+        Width = 200
         FieldName = 'cpf_cnpj'
       end    
       item
         Title.Caption = 'Nome'
-        Width = 350
+        Width = 450
         FieldName = 'nome'
       end>
     DataSource = dsBuscaCliente
     FixedColor = 14211288
     FixedHotColor = clNone
     Flat = True
+    Font.Color = 4915330
+    Font.Height = -13
+    Font.Style = [fsBold]
+    ParentFont = False
     Scrollbars = ssAutoBoth
     TabOrder = 1
     OnDblClick = DBGrid1DblClick

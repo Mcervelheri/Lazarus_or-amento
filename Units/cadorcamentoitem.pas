@@ -55,7 +55,6 @@ implementation
 
 procedure TCadOrcamentoItemF.btnBuscarProdClick(Sender: TObject);
 begin
-
   BuscaProdutoF := TBuscaProdutoF.Create(self);
   BuscaProdutoF.ShowModal;
   edtProdId.Field.AsString := DMF.qryProdutoid.AsString;

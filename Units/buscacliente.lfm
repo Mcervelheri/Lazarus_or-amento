@@ -1,7 +1,7 @@
 object BuscaClienteF: TBuscaClienteF
-  Left = 358
+  Left = 274
   Height = 441
-  Top = 209
+  Top = 173
   Width = 884
   Caption = 'Buscar cliente'
   ClientHeight = 441

@@ -11,10 +11,11 @@ object TelaInicialF: TTelaInicialF
   LCLVersion = '2.2.6.0'
   WindowState = wsMaximized
   object Image1: TImage
-    Left = 712
+    Left = -88
     Height = 500
-    Top = 208
+    Top = 128
     Width = 500
+    Anchors = [akTop, akLeft, akRight]
     AutoSize = True
     Center = True
     Picture.Data = {

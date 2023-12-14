@@ -38,6 +38,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure AbreOrcItens(orcamentoid: integer);
@@ -186,6 +187,7 @@ begin
   begin
     DMF.qryOrcamento.Delete;
   end;
+  AbreOrcItens(DMF.qryOrcamentoorcamentoid.AsInteger);
 end;
 
 procedure TOrcamentoF.btnFecharClick(Sender: TObject);
@@ -230,6 +232,11 @@ end;
 procedure TOrcamentoF.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   CloseAction := caFree;
+end;
+
+procedure TOrcamentoF.FormCreate(Sender: TObject);
+begin
+  inherited;
 end;
 
 procedure TOrcamentoF.FormShow(Sender: TObject);

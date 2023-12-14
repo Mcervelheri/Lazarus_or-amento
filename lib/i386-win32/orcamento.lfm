@@ -1,25 +1,24 @@
 inherited OrcamentoF: TOrcamentoF
-  Left = 329
-  Height = 775
-  Top = 202
-  Width = 1307
+  Left = 291
+  Height = 461
+  Top = 108
+  Width = 953
   Caption = 'Orcamento'
-  ClientHeight = 775
-  ClientWidth = 1307
+  ClientHeight = 461
+  ClientWidth = 953
   Color = 14211288
   OnClose = FormClose
+  OnCreate = FormCreate
   OnShow = FormShow
   inherited PageControl1: TPageControl
-    Height = 775
-    Width = 1307
-    ActivePage = tsConsulta
-    TabIndex = 0
+    Height = 461
+    Width = 953
     inherited tsConsulta: TTabSheet
-      ClientHeight = 767
-      ClientWidth = 1299
+      ClientHeight = 453
+      ClientWidth = 945
       inherited Panel1: TPanel
-        Width = 1299
-        ClientWidth = 1299
+        Width = 945
+        ClientWidth = 945
         inherited edtPesquisarID: TEdit
           Left = 112
           Font.Color = 4915330
@@ -30,19 +29,19 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel2: TPanel
-        Height = 687
-        ClientHeight = 687
+        Height = 373
+        ClientHeight = 373
         inherited btnAdicionar: TSpeedButton
           OnClick = btnAdicionarClick
         end
         inherited btnFechar: TSpeedButton
-          Top = 624
+          Top = 310
           OnClick = btnFecharClick
         end
       end
       inherited DBGrid1: TDBGrid
-        Height = 687
-        Width = 1235
+        Height = 373
+        Width = 881
         AlternateColor = clSilver
         Columns = <        
           item
@@ -81,16 +80,16 @@ inherited OrcamentoF: TOrcamentoF
       end
     end
     inherited tsCadastrar: TTabSheet
-      ClientHeight = 767
-      ClientWidth = 1299
+      ClientHeight = 453
+      ClientWidth = 945
       inherited Panel3: TPanel
-        Height = 687
-        ClientHeight = 687
+        Height = 373
+        ClientHeight = 373
         inherited btnSalvar: TSpeedButton
           OnClick = btnSalvarClick
         end
         inherited btnCancelar: TSpeedButton
-          Top = 631
+          Top = 317
           Anchors = [akLeft, akBottom]
           OnClick = btnCancelarClick
         end
@@ -102,12 +101,12 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel4: TPanel
-        Width = 1299
-        ClientWidth = 1299
+        Width = 945
+        ClientWidth = 945
         inherited Label2: TLabel
           Left = 1368
           Top = 0
-          Width = 196
+          Width = 0
           Caption = 'Orçamento'
         end
         object Label5: TLabel[1]
@@ -239,7 +238,7 @@ inherited OrcamentoF: TOrcamentoF
           MaxLength = 0
           ParentFont = False
           TabOrder = 4
-          Text = '12/12/2023'
+          Text = '09/12/2023'
           DataField = 'dt_orcamento'
           DataSource = dsModelo
         end
@@ -257,7 +256,7 @@ inherited OrcamentoF: TOrcamentoF
           MaxLength = 0
           ParentFont = False
           TabOrder = 5
-          Text = '27/12/2023'
+          Text = '24/12/2023'
           DataField = 'dt_validade_orcamento'
           DataSource = dsModelo
         end
@@ -279,8 +278,8 @@ inherited OrcamentoF: TOrcamentoF
         object DBText1: TDBText[12]
           Left = 208
           Height = 21
-          Top = 40
-          Width = 205
+          Top = 38
+          Width = 172
           DataField = 'nome'
           DataSource = dsModelo
           Font.Color = 4915330
@@ -291,15 +290,15 @@ inherited OrcamentoF: TOrcamentoF
         end
       end
       inherited Panel5: TPanel
-        Height = 687
-        Width = 1235
-        ClientHeight = 687
-        ClientWidth = 1235
+        Height = 373
+        Width = 881
+        ClientHeight = 373
+        ClientWidth = 881
         object DBGrid2: TDBGrid[0]
           Left = 1
-          Height = 685
+          Height = 371
           Top = 1
-          Width = 1233
+          Width = 879
           Align = alClient
           AlternateColor = clSilver
           AutoEdit = False
@@ -323,9 +322,8 @@ inherited OrcamentoF: TOrcamentoF
             end          
             item
               PickList.Strings = (
-                'Produto15'
-                'teste5'
-                'FOLHA DIAMANTE'
+                'TESTE22'
+                'TESTE 4'
                 'CHAPA DOURADA'
                 'FOLHA METALICA'
                 'CHAPA METALICA'

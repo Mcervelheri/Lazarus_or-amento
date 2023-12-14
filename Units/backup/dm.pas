@@ -82,7 +82,7 @@ end;
 
 procedure TDMF.qryCategoriaAfterInsert(DataSet: TDataSet);
 begin
-  //qryCategoriaprodutoid.AsInteger := strtoint(getSequence('categoria'));
+  qryCategoriacategoriaprodutoid.AsInteger := strtoint(getSequence('categoria'));
 
 end;
 
